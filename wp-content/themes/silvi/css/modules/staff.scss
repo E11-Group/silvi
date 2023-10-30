@@ -1,0 +1,86 @@
+.staff {
+    padding: 40px 0;
+    background-color: $primary-color;
+}
+
+.staff__title {
+    text-transform: uppercase;
+    @include fsz(48px);
+    font-weight: 600;
+    margin-bottom: 45px;
+
+    @media #{$phone} {
+        margin-bottom: 30px;
+    }
+}
+
+.staff__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -13px;
+
+    @media #{$tablet} {
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
+}
+
+.staff__item {
+    width: 14.7%;
+    margin: 0 13px;
+    margin-bottom: 90px;
+
+    @media #{$tablet} {
+        min-width: 197px;
+        margin-bottom: 50px;
+    }
+}
+
+.staff__thumbnail {
+    height: 172px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    img {
+        max-width: inherit;
+        height: 172px;
+        width: auto;
+    }
+}
+
+.staff__name {
+    @include fsz(24px);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.staff__link {
+    display: block;
+    color: $black;
+    @include fsz(18px);
+    line-height: 1.16;
+    margin-bottom: 15px;
+
+    @media #{$phone} {
+        @include fsz(16px);
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.staff__position {
+    font-weight: 500;
+    @include fsz(18px);
+    line-height: 1.16;
+    margin-top: 4px;
+
+    @media #{$phone} {
+        @include fsz(16px);
+    }
+}

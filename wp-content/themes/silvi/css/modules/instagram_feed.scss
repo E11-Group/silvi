@@ -1,0 +1,64 @@
+.insta-feed {
+    padding: 70px 0;
+}
+
+.insta-feed__title {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    width: calc(100% - 200px);
+    line-height: 1;
+    font-weight: 500;
+}
+
+.insta-feed__feed {
+    margin: 0 -14px;
+
+    @media #{$phone} {
+        margin: 0;
+    }
+}
+
+#sb_instagram #sbi_images {
+    @media #{$phone} {
+        padding: 0;
+    }
+}
+
+#sb_instagram.sbi_col_3 #sbi_images .sbi_item {
+    padding: 12px !important;
+
+    @media #{$phone} {
+        width: 100%;
+        padding: 0 !important;
+        padding-bottom: 20px !important;
+    }
+}
+
+#sb_instagram {
+    position: relative;
+}
+
+#sb_instagram #sbi_load {
+    position: absolute;
+    right: 16px;
+    width: auto;
+    top: -70px;
+    border-radius: 0;
+
+    @media #{$phone} {
+        display: none;
+    }
+
+    a {
+        font-family: $alt-family;
+        @include fsz(18px);
+        text-transform: uppercase;
+        font-weight: 600;
+        border-radius: 0;
+        padding: 6px 36px 3px;
+    }
+
+    svg {
+        display: none;
+    }
+}

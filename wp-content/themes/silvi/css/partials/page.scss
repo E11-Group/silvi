@@ -1,0 +1,25 @@
+.page__404 {
+    text-align: center;
+    padding: 100px 0;
+
+    @media #{$phone} {
+        padding: 60px 0;
+    }
+
+    .btn {
+        margin-top: 25px;
+    }
+}
+
+.page__blog-primary {
+    padding: 100px 0;
+
+
+    @media #{$phone} {
+        padding: 60px 0;
+    }
+}
+
+.page__title {
+    margin-bottom: 40px;
+}

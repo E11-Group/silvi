@@ -1,0 +1,100 @@
+.teams {
+    background-color: $black;
+}
+
+.teams__header {
+    padding: 41px 0 51px;
+}
+
+.teams__title {
+    color: $white;
+    text-transform: uppercase;
+}
+
+.teams__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @media #{$phone} {
+        .slick-list {
+            padding-right: 121px;
+        }
+    }
+}
+
+.teams__item {
+    width: 50%;
+    height: 50vw;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+
+    @media#{$phone} {
+        width: 100%;
+        height: 100vw;
+    }
+
+    &:hover {
+        &:after {
+            background-color: rgba($black, .75);
+            transition: ease all .3s;
+        }
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba($black, .25);
+        z-index: 0;
+        transition: ease all .3s;
+    }
+}
+
+.teams__item-inner {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 0 36px;
+    margin-bottom: 15%;
+}
+
+.teams__item-title {
+    color: $white;
+    @include fsz(36px);
+    text-transform: uppercase;
+    @media #{$phone} {
+        @include fsz(28px);
+    }
+}
+
+.teams__item-subtitle {
+    font-family: $primary-family;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $white;
+    @include fsz(24px);
+
+    @media #{$phone} {
+        font-family: $alt-family;
+    }
+}
+
+.teams__link {
+    position: absolute;
+    font-size: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    left: 0;
+    top: 0;
+}

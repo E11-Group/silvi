@@ -1,0 +1,69 @@
+#moove_gdpr_cookie_info_bar.moove-gdpr-light-scheme {
+    background-color: $primary-color !important;
+    border: none !important;
+}
+
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container {
+    max-width: 1380px !important;
+    padding: 0 32px !important;
+}
+
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content {
+    padding: 20px 0 !important;
+    display: block !important;
+
+    .moove-gdpr-cookie-notice {
+        @include fsz(13px);
+        letter-spacing: -.5px;
+        line-height: 14px;
+        width: 100%;
+        margin-bottom: 11px;
+
+        p {
+            width: 89%;
+
+            @media #{$phone} {
+                width: 100%;
+            }
+        }
+    }
+
+    .moove-gdpr-button-holder {
+        margin: 0;
+        padding-left: 0 !important;
+
+        .mgbutton {
+            margin-left: 0;
+        }
+
+        .mgbutton {
+            font-family: $alt-family;
+            text-transform: uppercase;
+            background-color: $black;
+            @include fsz(18px);
+            font-weight: 600;
+            padding: 10px 35px 8px;
+
+            @media #{$phone} {
+                @include fsz(16px);
+                padding: 10px 20px 8px;
+            }
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+
+        .moove-gdpr-infobar-reject-btn {
+            border: 2px solid $black;
+            background-color: $primary-color;
+            color: $black;
+            margin-left: 22px;
+            padding: 8px 35px 6px;
+
+            @media #{$phone} {
+                margin-left: 15px;
+            }
+        }
+    }
+}

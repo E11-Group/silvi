@@ -1,0 +1,121 @@
+.call-for-action__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.call-for-action__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.call-for-action__column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    background-color: $primary-color;
+    background-size: cover;
+    background-position: center;
+
+    &:nth-child(2n + 1) {
+        width: 66.66%;
+        padding: 56px 30px 48px;
+        @media #{$tablet} {
+            width: 100%;
+        }
+    }
+
+    &:nth-child(2n + 2) {
+        width: 33.33%;
+        padding: 68px 30px 70px;
+        @media #{$tablet} {
+            width: 100%;
+            padding: 68px 15px 70px;
+        }
+    }
+}
+
+.call-for-action__column--image {
+    position: relative;
+    z-index: 1;
+    transition: ease all 0.3s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: ease all 0.3s;
+    overflow: hidden;
+
+    &:before {
+        @include absolute-cover;
+        z-index: 1;
+    }
+
+    &:hover {
+        transition: ease all 0.6s;
+
+        &::after {
+            transform: scale(1.2);
+        }
+    }
+    .call-for-action__title {
+        color: $white;
+    }
+
+    .call-for-action__description {
+        color: $white;
+        max-width: 394px;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: inherit;
+        background-size: cover;
+        transform-origin: center;
+        transition: transform 0.4s ease-in-out;
+        
+    }
+}
+
+.call-for-action__overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: 0.4;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+
+}
+
+.call-for-action__title {
+
+    @include fsz(48px);
+    font-family: $alt-family;
+    font-weight: 600;
+    line-height: 1.09;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @media #{$laptop-screen} {
+        @include fsz(36px);
+    }
+}
+
+.call-for-action__btn-holder {
+    margin-top: 26px;
+}
+
+.call-for-action__inner {
+    max-width: 525px;
+    position: relative;
+    z-index: 1;
+}

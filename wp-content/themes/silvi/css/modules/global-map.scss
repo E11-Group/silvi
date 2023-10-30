@@ -1,0 +1,257 @@
+.map-results {
+  display: flex;
+  flex-wrap: wrap;
+  height: 700px;
+}
+
+.map-results__map {
+  background-color: rgba(216, 216, 216, 0.10);
+}
+
+.map-results__sidebar {
+  width: 30%;
+  padding: 23px 36px 33px 0;
+  height: 100%;
+  min-height: 700px;
+  background-color: $alt-color;
+}
+
+.map-results__inner {
+  width: 100%;
+}
+
+.map-results__map {
+  width: 70%;
+}
+
+
+.map-results__btn-holder {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.map-results__form .btn {
+  width: calc(50% - 15px);
+}
+
+.map-results__inner {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  flex: 1 1 auto;
+  position: relative;
+  /* need this to position inner content */
+  overflow-y: auto;
+  padding-right: 45px;
+
+  @media #{$phone} {
+    padding-right: 20px;
+  }
+}
+
+.map-results__list {
+  margin-top: 24px;
+}
+
+.map-results__header-title {
+  @include fsz(48px);
+  color: $white;
+  line-height: 1.09;
+  padding: 34px 40px 26px 40px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(#D8D8D8, 0.1);
+  position: relative;
+  cursor: pointer;
+  pointer-events: all;
+
+  &.has-children {
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 9px;
+      right: 0;
+      top: 50px;
+      transform: rotate(-180deg);
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFF' stroke-width='2' d='M12.5 7.5 7 2 1.5 7.5' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+
+    &.is-active {
+      color: $primary-color;
+
+      &:after {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &.js-toggle-location-all.is-active  {
+    color: $primary-color;
+  }
+}
+
+.map-results__location-title {
+  @include fsz(36px);
+  color: $white;
+  line-height: 1.09;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.map-results__item {
+  padding: 15px 0 28px 48px;
+  display: none;
+}
+
+.map-results__item-inner {
+  color: $white;
+  border-bottom: 1px solid rgba(#D8D8D8, 0.1);
+  padding: 40px 0;
+
+  &.is-active {
+
+    color: $primary-color;
+
+    a {
+      color: $primary-color;
+    }
+
+    .map-results__location-title {
+      color: $primary-color;
+    }
+  }
+}
+
+.map-results__address {
+  @include fsz(18px);
+
+  a {
+    color: $white;
+    &:hover, &:focus {
+      color: $primary-color;
+    }
+  }
+}
+
+.map-results__content .map-results__details:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+.map-results__item img,
+.map-results__item svg {
+  width: 100%;
+  height: auto;
+}
+
+
+@media screen and (max-width: 1440px) {
+  .map-results__sidebar {
+    width: 30%;
+    padding: 39px 25px 29px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+  .map-results__map {
+    width: 65%;
+  }
+
+  .map-results__sidebar {
+    width: 35%;
+  }
+}
+
+
+@media screen and (max-width: 920px) {
+  .map-results {
+    height: auto;
+  }
+
+  .map-results__map {
+    width: 100%;
+  }
+
+  .map-results__sidebar {
+    width: 100%;
+    height: 700px;
+  }
+
+  .map-results__inner {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .map-results__item:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .map-results__sidebar {
+    padding: 10px 25px 0 0;
+  }
+
+  .map-results__form .btn {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+// Perfect scrollbar styles
+
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y.ps--clicking,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-y:hover {
+  background-color: #1C303E;
+  opacity: 1;
+}
+
+.ps__rail-y.ps--clicking .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__thumb-y {
+  background-color: $primary-color;
+  border-radius: 0;
+  opacity: 1;
+}
+
+// Google Map styles
+.gm-style-iw {
+  max-width: 270px !important;
+  border-radius: 0 !important;
+  background-color: $primary-color !important;
+  padding: 20px !important;
+
+  .gm-style-iw-d {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    overflow: visible !important;
+    line-height: 1.333;
+  }
+
+  .gm-style-iw-c {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50) !important;
+  }
+}
+
+.gm-style .gm-style-iw-t:after {
+  background: linear-gradient(45deg, rgba($primary-color, 1) 50%, rgba($primary-color, 0) 51%, rgba($primary-color, 0) 100%) !important;
+}
+
+.map-results__location-title-on-map {
+  font-family: $primary-family;
+  @include fsz(16px);
+  line-height: 1.3125;
+  color: $black;
+  font-weight: 500;
+  margin-bottom: 6px;
+}

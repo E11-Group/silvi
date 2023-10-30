@@ -1,0 +1,213 @@
+.modal {
+    &.fancybox-content {
+        width: 100%;
+        max-width: 1314px;
+        padding: 85px 111px 105px;
+
+        @media #{$tablet} {
+            padding: 70px 40px;
+        }
+
+        @media #{$phone} {
+            padding: 70px 20px;
+        }
+    }
+
+    .fancybox-button svg path {
+        fill: $white;
+        stroke-width: initial;
+    }
+
+    .fancybox-close-small {
+        right: 17px;
+        top: 22px;
+    }
+}
+
+.modal__title {
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.modal__header {
+    border-bottom: 1px solid rgba($alt-color, 0.10);
+    padding-bottom: 38px;
+}
+
+.modal__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 47px 0 33px;
+    border-bottom: 1px solid rgba($alt-color, 0.10);
+
+    @media #{$tablet} {
+        padding: 30px 0;
+    }
+}
+
+.modal__item-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 80%;
+    padding-right: 30px;
+
+    @media #{$small-screen} {
+        @include fsz(30px);
+    }
+
+    @media #{$tablet} {
+        width: 100%;
+        @include fsz(24px);
+        margin-bottom: 20px;
+    }
+}
+
+.modal__item-action {
+    width: 20%;
+    text-align: right;
+
+    @media #{$tablet} {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+
+.modal__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal__primary {
+    width: 37%;
+
+    @media #{$small-screen} {
+        width: 30%;
+    }
+
+    @media #{$phone} {
+        width: 100%;
+    }
+}
+
+.modal__bio {
+    width: 63%;
+    padding-left: 80px;
+
+    @media #{$small-screen} {
+        padding-left: 40px;
+    }
+
+    @media #{$small-screen} {
+        width: 70%;
+    }
+
+    @media #{$phone} {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+.modal__image {
+    margin-bottom: 28px;
+
+    @media #{$phone} {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+.modal__bio-header {
+    margin-bottom: 45px;
+
+    @media #{$phone} {
+        margin-bottom: 25px;
+    }
+}
+
+.modal__bio-title {
+    @include fsz(48px);
+    font-weight: 600;
+    line-height: 1.09;
+    text-transform: uppercase;
+
+    @media #{$small-screen} {
+        @include fsz(36px);
+    }
+
+    @media #{$phone} {
+        @include fsz(30px);
+    }
+}
+
+.modal__bio-subtitle {
+    @include fsz(36px);
+    font-weight: 600;
+    line-height: 1.40;
+    text-transform: uppercase;
+
+    @media #{$small-screen} {
+        @include fsz(30px);
+    }
+
+    @media #{$phone} {
+        @include fsz(24px);
+    }
+}
+
+
+.modal-social {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        margin-bottom: 30px;
+
+        @media #{$phone} {
+            margin-bottom: 20px;
+        }
+
+        &:not(:last-child) {
+            margin-right: 33px;
+        }
+
+        a {
+            color: $primary-color;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $white;
+            }
+        }
+
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        &.linkedin {
+            a {
+                color: $linkedin;
+            }
+        }
+
+        &.instagram {
+            a {
+                color: $instagram;
+            }
+        }
+
+        &.facebook {
+            a {
+                color: $facebook;
+            }
+        }
+    }
+}
+    
+.modal__content {
+    margin-top: 30px;
+}

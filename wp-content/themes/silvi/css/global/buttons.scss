@@ -1,0 +1,85 @@
+.btn,
+input[type="submit"],
+input[type="button"],
+button[type="submit"] {
+  background: $primary-color;
+  color: $black;
+  display: inline-block;
+  font-size: 18px;
+  padding: 8px 35px 3px;
+  line-height: 1.42;
+  border: none;
+  cursor: pointer;
+  font-family: $alt-family;
+  font-weight: 600;
+  transition: $transition;
+  border-radius: 0;
+  text-decoration: none;
+  min-width: 150px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  &:hover,
+  &:active,
+  &:focus {
+      background-color: darken($primary-color, 10%);
+  }
+}
+
+.btn--dark {
+  background-color: $alt-color;
+  color: $primary-color;
+  &:hover,
+  &:active,
+  &:focus {
+      background-color: lighten($alt-color, 10%);
+  }
+}
+
+.btn--large {
+  padding: 15px 35px 9px;
+}
+
+.more-link {
+  font-size: 18px;
+  font-family: $primary-family;
+  text-transform: uppercase;
+  color: $primary-color;
+  text-decoration: underline;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.more-link--dark {
+  color: $black;
+}
+
+.btn-download {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: $black;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn-download__icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+  border-radius: 50%;
+  margin-right: 10px;
+  svg.icon {
+    width: 14px;
+    height: 17px;
+    transition: $transition;
+  }
+}

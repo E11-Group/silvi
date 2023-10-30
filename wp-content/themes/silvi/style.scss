@@ -1,0 +1,18 @@
+/*!
+Theme Name: Silvi
+Theme URI:
+Author:
+Author URI:
+Description: Base WordPress theme.
+Version:      99.0.0
+*/
+
+@import 'css/libs/**/*.scss';
+
+@import "css/global/**/*.scss";
+
+@import "css/partials/**/*.scss";
+
+@import "css/modules/**/*.scss";
+
+@import "css/templates/**/*.scss";

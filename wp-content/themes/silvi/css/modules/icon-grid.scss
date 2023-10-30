@@ -1,0 +1,64 @@
+.icons-grid {
+    padding: 80px 0 50px;
+    background-color: $primary-color;
+}
+
+.icons-grid__title {
+    @include fsz(48px);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.icons-grid__header {
+    text-align: center;
+    margin-bottom: 30px;
+    .container {
+        max-width: 575px;
+    }
+}
+
+.icons-grid__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -70px;
+    @media #{$laptop-screen} {
+        margin: 0 -15px;
+    }
+}
+
+.icons-grid__item {
+    width: 20%;
+    padding: 65px 70px;
+    text-align: center;
+    @media #{$laptop-screen} {
+        padding: 65px 15px;
+    }
+    @media #{$small-screen} {
+        width: 25%;
+    }
+    @media #{$tablet} {
+        width: 33.33%;
+    }
+    @media #{$phone} {
+        width: 50%;
+        padding: 30px 15px;
+    }
+
+}
+
+.icons-grid__item-title {
+    @include fsz(24px);
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.41;
+    @media #{$phone} {
+        @include fsz(28px);
+        line-height: 1;
+    }
+}
+
+.icons-grid__icon {
+    margin-bottom: 13px;
+    height: 50px;
+}

@@ -1,0 +1,80 @@
+.featured-news {
+    padding: 80px 0 52px;
+    @media #{$tablet} {
+        padding: 50px 0 20px;
+    }
+    @media #{$phone} {
+        padding: 50px 0 0;
+    }
+}
+.featured-news__wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.featured-news__thumbnail {
+    width: 49%;
+    @media #{$header} {
+        width: 100%;
+    }
+}
+.featured-news__body {
+    width: 51%;
+    padding: 8.1% 0 6.85% 10.45%;
+    @media #{$small-screen} {
+        padding: 3% 0 3% 6%;
+    }
+    @media #{$header} {
+        width: 100%;
+        padding: 7.5% 0 5.65%;
+    }
+}
+
+.featured-news__cat {
+    a {
+        padding: 0 8px;
+        background-color: $primary-color;
+        @include fsz(18px);
+        text-transform: uppercase;
+        color: $black;
+        font-family: $alt-family;
+        line-height: 1.24;
+        font-weight: 500;
+        padding-top: 3px;
+    }
+
+    margin-bottom: 7px;
+}
+
+.featured-news__title {
+    @include fsz(36px);
+    text-transform: uppercase;
+    color: $black;
+    font-family: $alt-family;
+    line-height: 1.41;
+    font-weight: 600;
+    margin-bottom: 17px;
+    @media #{$tablet} {
+        @include fsz(36px);
+        line-height: 1;
+    }
+    a {
+        color: $black;
+
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+}
+
+.featured-news__meta {
+    @include fsz(18px);
+    @media #{$tablet} {
+        @include fsz(16px);
+    }
+    @media #{$phone} {
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,262 @@
+.aggregate-calculator-row {
+    .content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        input[type="radio"] {
+            margin: -1px 0 0 0 !important;
+            line-height: normal;
+            vertical-align: middle!important;
+            border: 1px solid $black;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            pointer-events: all;
+            cursor: pointer;
+
+            &:checked {
+                background-color: $primary-color;
+                padding: 2px;
+                border: 3px solid $black;
+            }
+        }
+
+        input[type="checkbox"] {
+            width: 16px !important;
+            height: 16px !important;
+            display: inline;
+            padding: 5px!important;
+            border-radius: 0;
+            font-size: 0;
+            pointer-events: all;
+            cursor: pointer;
+            margin-left: 8px;
+            bottom: 6px;
+            position: relative;
+            &:checked {
+                background-color: $primary-color;
+                padding: 2px;
+                border: 3px solid $black;
+            }
+        }
+
+        .col-sm-5 {
+            width: 35%;
+
+            @media #{$tablet} {
+                width: 100%;
+            }
+        }
+
+        .col-sm-7  {
+            width: 60%;
+            margin-bottom: 20px;
+
+            @media #{$tablet} {
+                width: 100%;
+            }
+        }
+
+        .col-sm-6 {
+            width: 47.5%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            @media #{$tablet} {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        .col-sm-12 {
+            width: 100%;
+
+            .text-align-center {
+                text-align: center;
+            }
+        }
+
+        .row {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        select {
+            width: 100%;
+        }
+
+        h1 {
+            @include fsz(30px);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        p {
+            @include fsz(16px)
+        }
+
+        hr {
+            margin-bottom: 5px;
+        }
+
+        .job-sheet {
+                .job-specifications {
+                    margin-top: 15px;
+                    border: none;
+            }
+        }
+
+        .cltv-calculator {
+            box-shadow: none;
+            border-radius: 0;
+            margin-bottom: 30px;
+
+            .body {
+                padding-bottom: 20px;
+                padding-top: 10px;
+
+                h2 {
+                    @include fsz(24px);
+                    font-weight: 600;
+                    text-align: left;
+                }
+
+                form.calculator-form input[type="submit"] {
+                    width: 100%;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                }
+
+                .calculator-result {
+                    border-radius: 0;
+                    border: 1px solid $black;
+                    margin-left: 0;
+                    width: 100%;
+                }
+
+                .form-line {
+                    white-space: normal;
+                    text-align: left;
+
+                    .line-group {
+                        display: inline-flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        .units {
+                            margin-left: 5px;
+                            margin-right: 10px;
+                        }
+                    }
+                    .label {
+                        text-align: left;
+
+                    }
+
+                    a.add-to-job-btn {
+                        background: $primary-color;
+                        width: 100%;
+                        margin-top: 20px;
+                        padding: 5px 35px 0;
+                        display: block;
+                        height: auto;
+
+                        span {
+                            color: $black;
+                            font-family: $alt-family;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            @include fsz(18px);
+                            background-position: 80% 41%;
+                            background-image: url("data:image/svg+xml,%0A%3Csvg height='16' viewBox='0 0 8 16' width='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m0 0 8 8-8 8z' fill='%23111e27' fill-rule='evenodd'/%3E%3C/svg%3E");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+a.add-to-job-btn {
+    background: $primary-color;
+    width: 100%;
+    margin-top: 20px;
+    padding: 5px 35px 0;
+    display: block;
+    height: auto;
+    color: $black;
+
+    span {
+        color: $black;
+        font-family: $alt-family;
+        font-weight: 600;
+        text-transform: uppercase;
+        @include fsz(18px);
+        color: $black;
+    }
+}
+
+.fancybox-wrap.fancybox-desktop.fancybox-type-inline.fancybox-opened {
+    max-width: 500px;
+    width: 100% !important;
+    margin: 0 auto;
+
+    .fancybox-inner {
+        max-width: 100% !important;
+    }
+}
+
+.popup .body .add-material-form {
+
+    h2 {
+        @include fsz(20px);
+        font-weight: 600;
+    }
+    select {
+        width: 100%;
+    }
+
+    .form-line {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .tons-label {
+            margin-left: 8px;
+        }
+
+        a.add-to-job-btn span {
+            color: $black !important;
+            text-transform: uppercase;
+            font-weight: 600 !important;
+            font-size: 18px !important
+        }
+    }
+
+}
+
+
+
+
+
+.job-sheet input[type="text"], .send-specifications-form input[type="text"] {
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none;
+    color: $black !important;
+}
+
+body .job-sheet .item-result .res-data {
+
+    @media #{$phone} {
+        float: none;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 5px;
+    }
+}

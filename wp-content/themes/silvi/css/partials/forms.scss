@@ -1,0 +1,334 @@
+/*--------------------------------------------------------------
+# Fields
+--------------------------------------------------------------*/
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+input[type="checkbox"],
+textarea {
+    display: block;
+    @include fsz(16px);
+    font-weight: 500;
+    border: 1px solid $black;
+    border-radius: 5px;
+    padding: 24px 20px 22px;
+    color: #161616;
+    background: #ffffff;
+    height: 65px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &:focus {
+        outline: none;
+        color: #161616;
+    }
+}
+
+.gform_body {
+    margin-bottom: 40px;
+}
+
+.ginput_container_select {
+    position: relative;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 8px;
+        background: url(images/down-arrow.svg) no-repeat 0 0;
+        position: absolute;
+        top: 17px;
+        right: 11px;
+        background-size: contain;
+        z-index: 4;
+        pointer-events: none;
+    }
+}
+
+.gfield_select {
+    @include fsz(16px);
+    font-weight: 500;
+    font-family: $primary-family;
+    color: $black;
+    background: #ffffff;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 65px;
+    padding: 24px 20px 22px;
+    border: 1px solid $black;
+    position: relative;
+    z-index: 2;
+    border-radius: 5px;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+
+textarea {
+    display: block;
+    @include fsz(16px);
+    font-family: $primary-family;
+    color: #161616;
+    font-weight: 500;
+    width: 100%;
+    height: 122px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 24px 20px 22px;
+    border: 1px solid $black;
+    border-radius: 5px;
+}
+
+
+.ginput_container input.medium,
+.ginput_container textarea.textarea {
+    background: #ffffff;
+    outline: none;
+    width: 100% !important;
+    color: #161616;
+    padding: 11px 15px;
+    font-family: $primary-family;
+    margin-bottom: 3px;
+    font-weight: 500;
+
+    &::-moz-placeholder {
+        color: $black;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: $black;
+        opacity: 1;
+    }
+
+    &::-webkit-input-placeholder {
+        color: $black;
+        opacity: 1;
+    }
+}
+
+.gfield input[type="file"] {
+    background: #efefef;
+}
+
+.gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=submit],
+.gform_wrapper .gform_page_footer input.button,
+.gform_wrapper .gform_page_footer input[type=submit] {
+    padding: 18px 30px;
+    min-width: 170px;
+    font-size: 20px;
+}
+
+label,
+.gfield_label {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 0 1px;
+    cursor: pointer;
+    line-height: 1.3;
+
+    .hidden_label & {
+        @extend .accessible-text;
+    }
+}
+
+.entry-content ol li.gfield,
+.entry-content ul li.gfield,
+.gfield {
+    margin-bottom: 30px;
+}
+
+.validation_error {
+    display: none;
+}
+
+.validation_message {
+    color: #ff2d2d;
+    @include fsz(14px);
+    padding: 2px 0;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.gform_button {
+    position: relative;
+    min-width: 170px;
+}
+
+img.gform_ajax_spinner {
+    position: absolute;
+    top: 7px;
+    right: 0;
+}
+
+.gform_confirmation_message {
+    color: #161616;
+    @include fsz(20px);
+    padding: 50px;
+}
+
+.gform_validation_container {
+    display: none !important;
+    position: absolute !important;
+    left: -9000px;
+}
+
+
+.gform_wrapper .top_label input.medium,
+.gform_wrapper .top_label select.medium {
+    @include fsz(16px);
+    font-weight: 500;
+    border: 1px solid $black;
+    border-radius: 5px;
+    padding: 24px 20px 22px;
+    background: #ffffff;
+    height: 65px;
+    margin-bottom: 3px;
+}
+
+.gform_wrapper .gform_footer {
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+
+    button, input[type=submit] {
+        padding: 18px 30px;
+        min-width: 170px;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    svg.icon {
+        width: 10px;
+        height: 10px;
+        right: 25px;
+        position: absolute;
+        top: 50%;
+        color: #ffffff;
+        transform: translateY(-50%);
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+    padding: 24px 20px 22px;
+
+}
+
+div.ginput_container {
+    margin-top: 2px;
+
+    &.ginput_container_radio,
+    &.ginput_container_checkbox {
+        margin-top: 8px;
+    }
+}
+
+.gform_fields {
+    list-style-type: none !important;
+    padding-inline-start: 0 !important;
+}
+
+.gform_wrapper {
+    padding-top: 40px;
+}
+
+.ginput_container_select {
+    position: relative;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg height='8' viewBox='0 0 12 8' width='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m376.35 34-4.6 4.6-4.6-4.6-1.4 1.4 6 6 6-6z' fill='%231c2955' fill-rule='evenodd' transform='translate(-365.75 -34)'/%3E%3C/svg%3E");
+        position: absolute;
+        top: 31px;
+        right: 23px;
+        background-size: contain;
+        z-index: 4;
+        pointer-events: none;
+    }
+}
+
+.entry-content ul.gfield_checkbox,
+.gfield_checkbox,
+.entry-content ul.gfield_radio,
+.gfield_radio {
+    padding: 0;
+
+    > li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+
+        input[type=checkbox] {
+            width: 16px;
+            height: 16px;
+            border: 1px solid $black;
+            border-radius: 2px;
+            padding: 0;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 10px auto;
+            cursor: pointer;
+
+            &:checked {
+                background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 24.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 24 24' style='enable-background:new 0 0 24 24;' xml:space='preserve'%3E%3Cpath d='M9,18c-0.3,0-0.5-0.1-0.7-0.3l-5-5c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0L9,15.6L19.3,5.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 l-11,11C9.5,17.9,9.3,18,9,18z'/%3E%3C/svg%3E%0A");
+            }
+        }
+
+        input[type=radio] {
+            width: 16px;
+            height: 16px;
+            border: 1px solid $black;
+            border-radius: 50%;
+            padding: 0;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 8px auto;
+            cursor: pointer;
+
+            &:checked {
+                background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 24.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 290.3 290.3' style='enable-background:new 0 0 290.3 290.3;' xml:space='preserve'%3E%3Cg%3E%3Ccircle cx='145.1' cy='145.1' r='144.6'/%3E%3Cpath d='M145.1,290.3C65.1,290.3,0,225.2,0,145.1S65.1,0,145.1,0c80,0,145.1,65.1,145.1,145.1S225.2,290.3,145.1,290.3z M145.1,1 C65.7,1,1,65.7,1,145.1s64.7,144.1,144.1,144.1s144.1-64.7,144.1-144.1S224.6,1,145.1,1z'/%3E%3C/g%3E%3C/svg%3E%0A");
+            }
+        }
+
+        label {
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 4px;
+        }
+    }
+}
+
+.gform_title {
+    text-align: center;
+}
+
+body .entry-content .gform_description {
+    display: block;
+    margin-bottom: 16px;
+}

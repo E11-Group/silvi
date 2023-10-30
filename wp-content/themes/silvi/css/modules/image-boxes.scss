@@ -1,0 +1,240 @@
+.image-boxes {
+    background-color: $black;
+}
+
+.image-boxes__header {
+    padding: 41px 0 51px;
+    @media #{$phone} {
+        padding: 33px 0 30px;
+    }
+}
+
+.image-boxes__title {
+    color: $white;
+    text-transform: uppercase;
+}
+
+.image-boxes__wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-boxes__video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
+
+.image-boxes__item {
+    background-size: cover;
+    padding: 0 60px;
+    width: 33.33%;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+    @media #{$tablet} {
+        width: 50%;
+        padding: 40px 20px;
+    }
+
+    @media #{$phone} {
+        min-height: 65vw;
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    &:hover {
+        .image-boxes__overlay {
+            opacity: 1;
+            transition: ease all .3s;
+        }
+    }
+
+    & > p {
+        @media #{$phone} {
+            display: none;
+        }
+    }
+
+    p {
+        color: $white;
+        z-index: 1;
+        position: relative;
+        text-transform: uppercase;
+        @include fsz(24px);
+        line-height: 1.16;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 25px;
+
+        @media #{$desktop} {
+            @include fsz(20px);
+        }
+
+        @media #{$tablet} {
+            @include fsz(16px);
+        }
+
+        @media #{$phone} {
+            @include fsz(14px);
+            margin-top: 0;
+        }
+    }
+}
+
+.image-boxes__item--alt {
+    @media #{$phone} {
+        min-height: 300px;
+        height: auto;
+    }
+}
+
+.image-boxes__logo {
+    width: 100%;
+    max-width: 188px;
+    margin: 0 auto 20px;
+}
+
+.image-boxes__box-title {
+    color: $white;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    @include fsz(48px);
+    line-height: 0.92;
+    text-align: center;
+
+    @media #{$tablet} {
+        @include fsz(36px);
+    }
+
+    @media #{$phone} {
+        @include fsz(21px);
+    }
+
+    @media (max-width: 400px) {
+        @include fsz(17px);
+    }
+}
+
+.image-boxes__icon {
+    position: relative;
+    max-width: 80px;
+    margin-bottom: 20px;
+    z-index: 2;
+
+    @media #{$phone} {
+        max-width: 34px;
+    }
+}
+
+.image-boxes__box-title--alt {
+    @include fsz(72px);
+    position: absolute;
+    bottom: 20%;
+
+    @media #{$tablet} {
+        @include fsz(45px);
+    }
+
+    @media #{$phone} {
+        @include fsz(36px);
+    }
+}
+
+.image-boxes__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba($black, .75);
+    transition: ease all .3s;
+    z-index: 1;
+    color: $white;
+    @include fsz(24px);
+    padding: 10.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .btn {
+        margin-top: 30px;
+    }
+
+    @media #{$desktop} {
+        @include fsz(22px);
+    }
+
+    @media #{$tablet} {
+        @include fsz(18px);
+    }
+
+    @media #{$phone} {
+        @include fsz(14px);
+    }
+
+    .btn {
+
+        @media #{$phone} {
+            padding: 8px 20px 3px;
+            margin-top: 15px;
+            min-width: unset;
+        }
+    }
+}
+
+.image-boxes__overlay-inner {
+    p{
+        @include fsz(24px);
+        text-transform: none;
+        font-weight: 600;
+
+
+        @media #{$tablet} {
+            @include fsz(18px);
+        }
+
+        @media #{$phone} {
+            @include fsz(14px);
+        }
+    }
+
+    a {
+        margin-top: 45px;
+
+        @media #{$tablet} {
+            margin-top: 30px;
+        }
+
+        @media #{$phone} {
+            margin-top: 15px;
+        }
+    }
+}
+
+.modal-download-pdf-reader {
+    display: block;
+    position: absolute;
+    right: 23px;
+    bottom: 30px;
+    width: 34px;
+    height: 34px;
+    background: url("images/adobe.png") no-repeat center;
+    background-size: contain;
+    z-index: 2;
+}
