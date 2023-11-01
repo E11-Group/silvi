@@ -16,5 +16,10 @@
         <symbol viewBox="0 0 15 15" id="icon-pointed-arrow-right"><defs><path id="axy" d="M7.5 0 6.178 1.322l5.231 5.241H0v1.875h11.409l-5.231 5.24L7.5 15 15 7.5z"/></defs><g fill="none" fill-rule="evenodd"><mask id="bxy" fill="#fff"><use xlink:href="#axy"/></mask><use fill-opacity="0" fill="currentColor" xlink:href="#axy"/><g mask="url(#bxy)"><path fill="currentColor" d="M-4-4h24.24v24.24H-4z"/></g></g></symbol>
         
         <symbol viewBox="0 0 14 17" id="icon-download"><defs><path d="M14 6h-4V0H4v6H0l7 7 7-7ZM0 15v2h14v-2H0Z" id="ap"/></defs><g fill="none" fill-rule="evenodd"><mask id="bp" fill="#fff"><use xlink:href="#ap"/></mask><use fill-opacity="0" fill="#111E27" xlink:href="#ap"/><g mask="url(#bp)" fill-opacity=".87"><path fill="#111E27" d="M-5-3h24.24v24.24H-5z"/></g></g></symbol>
+        <symbol id="icon-cross" viewBox="0 0 32 32">
+            <path
+                d="M16 32c-8.837 0-16-7.163-16-16s7.163-16 16-16c8.837 0 16 7.163 16 16s-7.163 16-16 16zM8.377 8.796c-0.531 0.571-0.497 1.465 0.074 1.995l5.634 5.232-5.314 4.934c-0.571 0.531-0.604 1.424-0.074 1.995s1.424 0.604 1.995 0.074l5.467-5.077 5.467 5.077c0.571 0.531 1.465 0.497 1.995-0.074s0.497-1.465-0.074-1.995l-5.314-4.934 5.634-5.232c0.571-0.531 0.604-1.424 0.074-1.995s-1.424-0.604-1.995-0.074l-5.788 5.374-5.788-5.374c-0.571-0.531-1.465-0.497-1.995 0.074z">
+            </path>
+        </symbol>
     </defs>
 </svg>

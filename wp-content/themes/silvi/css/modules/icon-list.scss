@@ -1,0 +1,78 @@
+.icon-list {
+    position: relative;
+    padding: 60px 0px 89px;
+    background-color: $alt-color;
+    @media #{$phone-portrait} {
+      padding: 62px 0px 72px;
+    }
+  }
+  
+  .icon-list__title {
+    color: $white;
+    font-family: $alt-family;
+    @include fsz(48px);
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    text-align: center;
+    @media #{$phone} {
+      @include fsz(36px);
+      margin-bottom: 27px;
+    }
+  }
+  
+  .icon-list__grid {
+      max-width: 1440px;
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 24px;
+      margin: 0 auto;
+      @media #{$tablet} {
+          grid-template-columns: repeat(4,1fr);
+        }
+        @media #{$phone} {
+          grid-template-columns: repeat(3,1fr);
+        }
+        @media #{$phone-portrait} {
+          gap: 0px;
+          grid-template-columns: repeat(2,1fr);
+        }
+  }
+  
+  .icon-list__item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 27px 31px 10px 32px;
+  }
+  
+  .icon-list__media {
+      margin-bottom: 15px;
+      width: 78px;
+      height: 70px;
+  }
+  
+  .icon-list__item-title {
+    color: $white;
+    text-align: center;
+    font-family: $alt-family;
+   @include fsz(24px);
+    font-weight: 500;
+    line-height: 1; 
+    text-transform: uppercase;
+  }
+  
+  .cover-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 0px;
+      text-indent: -99em;
+      z-index: 1;
+  }

@@ -1,0 +1,116 @@
+.grid-popup {
+  position: relative;
+  background-color: $alt-color;
+}
+
+.grid-popup__title {
+  padding: 44px 0px 25px;
+  color: $white;
+  font-family: $alt-family;
+ @include fsz(48px);
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  @media #{$phone-portrait} {
+    padding: 44px 0px 42px;
+    @include fsz(36px);
+  }
+}
+
+.grid-popup__grid {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0px;
+}
+
+.grid-popup__item {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 360px;
+a {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+}
+}
+
+
+.grid-popup__media {
+    height: 100%;
+ 
+}
+
+.grid-popup__item-title {
+    position: absolute;
+    z-index: 1;
+    bottom: 22px;
+    left: 12px;
+    color: $white;
+    font-family: $alt-family;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1; 
+    text-transform: uppercase;
+    margin-right: 30px;
+}
+
+.grid-popup {
+   .fancybox-content {
+        border-radius: 10px;
+        margin: 30px;
+        background: $white;
+        padding: 60px;
+        max-width: 1170px;
+        overflow: visible;
+        @media #{$tablet} {
+            padding: 40px;
+        }
+        @media #{$phone-portrait} {
+            padding: 20px;
+        }
+    }
+    .fancybox-button {
+            display: none;
+        }
+    .grid-popup__close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $primary-color;
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        .icon {
+            width: 16px;
+            height: 16px;
+            color: $white;
+        }
+        position: absolute;
+        right: 0;
+        top: -50px;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+        &:hover {
+            background-color: $white;
+        }
+    }
+    
+}
+
+
+.grid-popup__grid {
+     .fancybox-button {
+            display: none;
+        }
+
+        .grid-popup__close {
+            display: none;
+        }
+}
