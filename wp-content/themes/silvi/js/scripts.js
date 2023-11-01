@@ -241,16 +241,16 @@ $(function () {
                 dots: false
             }
         },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false,
-                    arrows: false
-                }
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+                arrows: false
             }
+        }
         ]
     }
     $('.js-products-showcase-slider').slick(productSettings);
@@ -313,15 +313,15 @@ $(function () {
                 dots: false
             }
         },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false
-                }
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false
             }
+        }
         ]
     }).on('afterChange', function (event, slick, currentSlide, nextSlide) {
         var activeSlide = $('.js-hero-thumbnail .hero__menu-item.slick-slide.slick-active');
@@ -355,15 +355,15 @@ $(function () {
                 dots: false
             }
         },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false
-                }
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false
             }
+        }
         ]
     }).on('afterChange', function (event, slick, currentSlide, nextSlide) {
         var activeSlide = $('.js-hero-thumbnail .hero__menu-item.slick-slide.slick-active');
@@ -414,16 +414,16 @@ $(function () {
                 dots: false
             }
         },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false,
-                    arrows: false
-                }
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+                arrows: false
             }
+        }
         ]
     }
     $('.js-news-slider').slick(newsSettings);
@@ -615,6 +615,26 @@ function animateCss(elements) {
 
 }
 
+
+///fancybox for form
+
+$(document).ready(function () {
+    function addActiveConfirmClass() {
+        $("body").addClass("activeConfirm");
+    }
+    function isFormConfirmed() {
+        return $("body .gform_confirmation_message").length > 0;
+    }
+    if (isFormConfirmed()) {
+        addActiveConfirmClass();
+    }
+    $(".hero__fancybox-btn").on("click", function (e) {
+        e.preventDefault();
+        if (isFormConfirmed()) {
+            addActiveConfirmClass();
+        }
+    });
+});
 $(function () {
 
     $('.js-header').e11_MobileNav();

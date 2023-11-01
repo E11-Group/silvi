@@ -94,61 +94,61 @@ get_header(); ?>
     <div class="grid-popup__grid">
         <div class="grid-popup__item"
             style="background-image: url('<?php echo get_template_directory_uri(); ?>/uploads/gp1.png')">
-            <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/uploads/gp1.png">
+            <a data-fancybox="images" href="<?php echo get_template_directory_uri(); ?>/uploads/gp1.png">
             </a>
             <h3 class="grid-popup__item-title">driveways aprons</h3>
         </div>
         <div class="grid-popup__item"
             style="background-image: url('<?php echo get_template_directory_uri(); ?>/uploads/gp2.png')">
-            <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/uploads/gp2.png">
+            <a data-fancybox="images" href="<?php echo get_template_directory_uri(); ?>/uploads/gp2.png">
             </a>
             <h3 class="grid-popup__item-title">Curbs Sidewalks</h3>
         </div>
         <div class="grid-popup__item"
             style="background-image: url('<?php echo get_template_directory_uri(); ?>/uploads/gp3.png')">
-            <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/uploads/gp3.png">
+            <a data-fancybox="images" href="<?php echo get_template_directory_uri(); ?>/uploads/gp3.png">
             </a>
             <h3 class="grid-popup__item-title">Concrete Patios pool decks</h3>
         </div>
         <div class="grid-popup__item"
             style="background-image: url('<?php echo get_template_directory_uri(); ?>/uploads/gp4.png')">
-            <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/uploads/gp4.png">
+            <a data-fancybox="images" href="<?php echo get_template_directory_uri(); ?>/uploads/gp4.png">
             </a>
             <h3 class="grid-popup__item-title">Stamped/dyed concrete</h3>
         </div>
         <div class="grid-popup__item"
             style="background-image: url('<?php echo get_template_directory_uri(); ?>/uploads/gp5.png')">
-            <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/uploads/gp5.png">
+            <a data-fancybox="images" href="<?php echo get_template_directory_uri(); ?>/uploads/gp5.png">
             </a>
             <h3 class="grid-popup__item-title">concrete Pools</h3>
         </div>
         <div class="grid-popup__item"
             style="background-image: url('<?php echo get_template_directory_uri(); ?>/uploads/gp6.png')">
-            <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/uploads/gp6.png">
+            <a data-fancybox="images" href="<?php echo get_template_directory_uri(); ?>/uploads/gp6.png">
             </a>
             <h3 class="grid-popup__item-title">Hardscape</h3>
         </div>
         <div class="grid-popup__item"
             style="background-image: url('<?php echo get_template_directory_uri(); ?>/uploads/gp7.png')">
-            <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/uploads/gp7.png">
+            <a data-fancybox="images" href="<?php echo get_template_directory_uri(); ?>/uploads/gp7.png">
             </a>
             <h3 class="grid-popup__item-title">Landscape stone</h3>
         </div>
         <div class="grid-popup__item"
             style="background-image: url('<?php echo get_template_directory_uri(); ?>/uploads/gp8.png')">
-            <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/uploads/gp8.png">
+            <a data-fancybox="images" href="<?php echo get_template_directory_uri(); ?>/uploads/gp8.png">
             </a>
             <h3 class="grid-popup__item-title">Belgian block</h3>
         </div>
         <div class="grid-popup__item"
             style="background-image: url('<?php echo get_template_directory_uri(); ?>/uploads/gp9.png')">
-            <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/uploads/gp9.png">
+            <a data-fancybox="images" href="<?php echo get_template_directory_uri(); ?>/uploads/gp9.png">
             </a>
             <h3 class="grid-popup__item-title">sheds pole barns garage floors</h3>
         </div>
-        <button type="button" data-fancybox-close="" class="grid-popup__close" title="close">
-        <svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg>
-            </button>
     </div>
+    <!-- <div class="custom-close-button" id="custom-close-button">&times;</div>
+    <div class="custom-nav-button custom-nav-prev" id="custom-nav-prev">&lt;</div>
+    <div class="custom-nav-button custom-nav-next" id="custom-nav-next">&gt;</div> -->
 </section>
 <?php get_footer();?>

@@ -37,7 +37,7 @@ if ( $data['subtitle_style']  == 'long') {
                     <a class="btn" href="<?php echo esc_url($link_url); ?>"
                         target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
                     <?php endif; ?>
-                    <a class="btn btn--large" href="#fancyboxHero" data-fancybox>FIND A SILVI-CERTIFIED CONTRACTOR NEAR
+                    <a class="btn btn--large hero__fancybox-btn" href="#fancyboxHero" data-fancybox >FIND A SILVI-CERTIFIED CONTRACTOR NEAR
                         YOU</a>
                 </div>
             </div>
@@ -57,21 +57,38 @@ if ( $data['subtitle_style']  == 'long') {
         </div>
         <?php endif; ?>
         <div class="hero__fancybox-content" id="fancyboxHero">
-        <button type="button" data-fancybox-close="" class="hero__popup-close" title="close">
-                    <svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg>
-                    </button>
+            <button type="button" data-fancybox-close="" class="hero__popup-close" title="close">
+                <svg class="icon icon-cross">
+                    <use xlink:href="#icon-cross"></use>
+                </svg>
+            </button>
             <div class="hero__popup-heading">
+                <figure class="hero__popup-media">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/logoSilvi.svg"
+                        alt="Description of image">
+                </figure>
+                <h3 class="hero__popup-title">We know amazing contractors.</h3>
+                <h4 class="hero__popup-subtitle">Send us your info and we’ll help you find one.</h4>
+            </div>
+            <div class="hero__popup-form">
+                <?php
+                        echo do_shortcode( '[gravityform id="4" tabindex="-1" title="false" description="false" ajax="true"]' ); ?>
+            </div>
+            <div class="hero__popup-confirmation">
+                <button type="button" data-fancybox-close="" class="hero__popup-close" title="close">
+                    <svg class="icon icon-cross">
+                        <use xlink:href="#icon-cross"></use>
+                    </svg>
+                </button>
+                <div class="hero__popup-confirm">
                     <figure class="hero__popup-media">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/logoSilvi.svg"
                             alt="Description of image">
                     </figure>
-                <h3 class="hero__popup-title">We know amazing contractors.</h3>
-                <h3 class="hero__popup-subtitle">Send us your info and we’ll help you find one.</h3>
+                    <h3 class="hero__popup-title">Thanks for reaching out. One of our associates will be in touch soon.
+                    </h3>
+                </div>
             </div>
-            <div class="hero__popup-form">
-                      <?php
-                        echo do_shortcode( '[gravityform id="4" tabindex="-1" title="false" description="false" ajax="true"]' ); ?>
-                    </div>
         </div>
     </div>
 </section>
