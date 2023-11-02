@@ -427,9 +427,6 @@
   position: relative;
   margin: 0 auto;
   @media #{$phone-portrait} {
-   height: 100vh;
-  }
-  @media #{$phone-portrait} {
     padding: 24px 30px 42px;
   }
   &:before {
@@ -442,6 +439,12 @@
     height: 100%;
     background-color: $primary-color;
   }
+}
+
+.hero__popup-confirm {
+  @media #{$phone-portrait} {
+    height: 100vh;
+   }
 }
 
 .hero__popup-media {
@@ -548,6 +551,7 @@
   .gform_validation_errors {
     display: none;
   }
+ 
 }
 
 .hero__popup-title {

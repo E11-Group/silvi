@@ -70,10 +70,11 @@ if ( $data['subtitle_style']  == 'long') {
                 <h3 class="hero__popup-title">We know amazing contractors.</h3>
                 <h4 class="hero__popup-subtitle">Send us your info and we’ll help you find one.</h4>
             </div>
-            <div class="hero__popup-form">
+            <div class="hero__popup-form" id="your-form-element">
                 <?php
                         echo do_shortcode( '[gravityform id="4" tabindex="-1" title="false" description="false" ajax="true"]' ); ?>
-            </div>
+             <input type="hidden" id="formSubmissionStatus" name="formSubmissionStatus" value="not-submitted">
+        </div>
             <div class="hero__popup-confirmation">
                 <button type="button" data-fancybox-close="" class="hero__popup-close" title="close">
                     <svg class="icon icon-cross">

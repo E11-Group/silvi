@@ -147,8 +147,5 @@ get_header(); ?>
             <h3 class="grid-popup__item-title">sheds pole barns garage floors</h3>
         </div>
     </div>
-    <!-- <div class="custom-close-button" id="custom-close-button">&times;</div>
-    <div class="custom-nav-button custom-nav-prev" id="custom-nav-prev">&lt;</div>
-    <div class="custom-nav-button custom-nav-next" id="custom-nav-next">&gt;</div> -->
 </section>
 <?php get_footer();?>
