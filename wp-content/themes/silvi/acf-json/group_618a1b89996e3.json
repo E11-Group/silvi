@@ -752,6 +752,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6544d04573404": {
+                    "key": "layout_6544d04573404",
+                    "name": "past_project_gallery",
+                    "label": "Past Project Gallery",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6544d04573406",
+                            "label": "Past Project Gallery",
+                            "name": "past_project_gallery",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6544ced8951bf"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -766,13 +798,6 @@
                 "operator": "==",
                 "value": "default"
             }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "template-silvi.php"
-            }
         ]
     ],
     "menu_order": 0,
@@ -786,5 +811,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699006155
+    "modified": 1699012200
 }

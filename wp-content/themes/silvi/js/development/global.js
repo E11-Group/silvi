@@ -469,4 +469,13 @@ $(document).ready(function () {
             addActiveConfirmClass();
         }
     });
+
+     $(".grid-popup__item [data-fancybox]").fancybox({
+                beforeLoad: function(instance, current) {
+                    $(".fancybox-inner").addClass("gallery-image-holder");
+                },
+                afterClose: function(instance, current) {
+                    $(".fancybox-inner").removeClass("gallery-image-holder");
+                }
+            });
 });
