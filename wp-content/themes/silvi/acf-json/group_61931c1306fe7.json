@@ -162,87 +162,6 @@
             "return_format": "array"
         },
         {
-            "key": "field_6544ac37f293a",
-            "label": "Popup Logo Image",
-            "name": "pb_popup_logo_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6544ab53f2939",
-                        "operator": "==",
-                        "value": "trigger-popup"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_6544ac57f293b",
-            "label": "Popup Main Title",
-            "name": "pb_popup_main_title",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6544ab53f2939",
-                        "operator": "==",
-                        "value": "trigger-popup"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "rows": 2,
-            "placeholder": "",
-            "new_lines": "br"
-        },
-        {
-            "key": "field_6544ac75f293c",
-            "label": "Popup Sub Title",
-            "name": "pb_popup_sub_title",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "rows": 2,
-            "placeholder": "",
-            "new_lines": "br"
-        },
-        {
             "key": "field_6544ac9af293d",
             "label": "Gravity Form Shortcode",
             "name": "pb_gravity_form_shortcode",
@@ -327,5 +246,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698999565
+    "modified": 1699017999
 }
