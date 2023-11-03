@@ -405,14 +405,18 @@
     opacity: 1;
   }
 }
-
+.hero__fancybox-btn {
+  @include fsz(24px);
+  line-height: 1;
+}
 .hero__fancybox-content {
   max-width: 1098px;
   width: 100%;
-  margin: 10% auto;
+  margin: 3% auto;
   padding: 0px;
   display: none;
   overflow: hidden;
+  background-color: $primary-color;
   @media #{$tablet} {
     margin: 0;
   }
@@ -422,23 +426,17 @@
 }
 
 .hero__popup-heading, .hero__popup-confirm {
-  max-width: 710px;
   padding: 24px 30px 22px;
   position: relative;
-  margin: 0 auto;
+
   @media #{$phone-portrait} {
-    padding: 24px 30px 42px;
+    padding: 24px 30px 25px;
   }
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -30%;
-    z-index: 1;
-    width: calc(100vw + 30%);
-    height: 100%;
-    background-color: $primary-color;
-  }
+}
+.hero__popup-heading-inner{
+  max-width: 710px;
+  margin: 0 auto;
+
 }
 
 .hero__popup-confirm {
@@ -452,7 +450,7 @@
   width: 97px;
   height: 58px;
   z-index: 2;
-  margin-bottom: 37px;
+  margin-bottom: 0;
 }
 
 .hero__popup-close {
@@ -466,15 +464,40 @@
     fill: $alt-color;
   }
 }
-
-.hero__popup-form {
-  max-width: 730px;
-  padding: 7px 40px 63px;
+.popup-form-header{
+  max-width: 780px;
   margin: 0 auto;
-
+  order: 0;
+  padding: 0 25px;
+  width: 100%;
+}
+.popup-form__body{
+  background: $white;
+  order: 1;
+  padding: 47px 25px 0;
+}
+.popup-form__body-inner{
+  max-width: 730px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(auto-fill,auto);
+  grid-column-gap: 24px;
+  grid-row-gap: 30px;
+  width: 100%;
+}
+.hero__popup-form {
+  margin: 0 auto;
+  .gform_body{
+    margin: 0;
+  }
+  .gform_wrapper{
+    padding-top: 15px;
+  }
   .gform_wrapper.gravity-theme .gform_fields {
-    grid-column-gap: 24px;
-    grid-row-gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     @media #{$phone} {
       grid-row-gap: 24px;
     }
@@ -535,6 +558,15 @@
   .gform_button {
     background: rgba(17, 30, 39, 0.4);
   }
+  .gform_wrapper .gform_footer {
+    background: $white;
+    padding: 31px 25px 63px!important;
+    .gform_footer__inner{
+      max-width: 730px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
   .gform_wrapper .gform_footer button,
   .gform_wrapper .gform_footer input[type="submit"] {
     font-size: 18px;
@@ -551,7 +583,23 @@
   .gform_validation_errors {
     display: none;
   }
- 
+  .gform_confirmation_wrapper{
+    padding: 10px 25px 70px;
+  }
+ .gform_confirmation_message{
+   max-width: 710px;
+   margin: 0 auto;
+   padding: 0;
+   @include fsz(72px);
+   font-family: $alt-family;
+   font-weight: 600;
+   line-height: 1.2;
+   text-transform: uppercase;
+   color: $alt-color;
+   @media #{$laptop-screen} {
+     @include fsz(48px);
+   }
+ }
 }
 
 .hero__popup-title {
@@ -582,16 +630,3 @@
   }
 }
 
-.hero__popup-confirmation {
-  display: none;
-}
-
-.activeConfirm {
-  .hero__popup-confirmation {
-    display: block;
-  }
-
-  .hero__popup-heading, .hero__popup-form {
-    display: none;
-  }
-}

@@ -616,25 +616,24 @@ function animateCss(elements) {
 }
 
 
-///fancybox for form
 
 $(document).ready(function () {
-    function addActiveConfirmClass() {
-        $("body").addClass("activeConfirm");
-    }
-    function isFormConfirmed() {
-        return $("body .gform_confirmation_message").length > 0;
-    }
-    if (isFormConfirmed()) {
-        addActiveConfirmClass();
-    }
-    $(".hero__fancybox-btn").on("click", function (e) {
-        e.preventDefault();
-        if (isFormConfirmed()) {
-            addActiveConfirmClass();
-        }
-    });
+//Script added to wrap all elements of form in a single div for banner form on silvi page
+    function heroFormWrapper() {
+            if($('.hero__popup-form .gfield').length) {
+             var $fieldsToWrap = $('.hero__popup-form .gfield').not('.popup-form-header');
+            $fieldsToWrap.wrapAll('<div class="popup-form__body"><div class="popup-form__body-inner"></div></div>');
 
+            var $gformFooter = $('.hero__popup-form .gform_footer');
+             $gformFooter.find('*').wrapAll('<div class="gform_footer__inner"></div>');
+             }
+    }
+        heroFormWrapper();
+         jQuery(document).on("gform_page_loaded", function (event, form_id, current_page) {
+                heroFormWrapper();
+            });
+
+//Script added for the project past gallery fancybox
      $(".grid-popup__item [data-fancybox]").fancybox({
                 beforeLoad: function(instance, current) {
                     $(".fancybox-inner").addClass("gallery-image-holder");
