@@ -22,20 +22,30 @@ function e11_page_banner($args = array(), $use_page_content = false, $get_field_
             'subtitle_style'  => $get_field_type($prefix . 'pb_subtitle_style', $field_location),
             'subtitle'        => $get_field_type($prefix . 'pb_subtitle', $field_location),
             'button'          => $get_field_type($prefix . 'pb_button', $field_location),
+            'button_type'          => $get_field_type($prefix . 'pb_button_type', $field_location),
+            'popup_logo_image'          => $get_field_type($prefix . 'pb_popup_logo_image', $field_location),
+            'popup_main_title'          => $get_field_type($prefix . 'pb_popup_main_title', $field_location),
+            'popup_sub_title'          => $get_field_type($prefix . 'pb_popup_sub_title', $field_location),
+            'gravity_form_shortcode'          => $get_field_type($prefix . 'pb_gravity_form_shortcode', $field_location),
             'bg_type'         => $get_field_type($prefix . 'pb_bg_type', $field_location),
             'video'           => $get_field_type($prefix . 'pb_video', $field_location),
             'module_id'       => $get_field_type($prefix . 'pb_module_id', $field_location),
         );
     else:
         $defaults = array(
-            'image'           => false,
-            'title'           => false,
-            'subtitle'        => false,
-            'subtitle_style'  => false,
-            'button'          => false,
-            'bg_type'         => false,
-            'video'           => false,
-            'module_id'       => false,
+            'image' => false,
+            'title' => false,
+            'subtitle' => false,
+            'subtitle_style' => false,
+            'button' => false,
+            'button_type' => false,
+            'popup_logo_image' => array(),
+            'popup_main_title' => false,
+            'popup_sub_title' => false,
+            'gravity_form_shortcode' => false,
+            'bg_type' => false,
+            'video' => false,
+            'module_id' => false,
         );
     endif;
 

@@ -6,6 +6,7 @@
             "key": "field_61ba4b129b5c1",
             "label": "Background Type",
             "name": "pb_bg_type",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 1,
@@ -30,6 +31,7 @@
             "key": "field_61931c130bd5c",
             "label": "Background Image",
             "name": "pb_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 1,
@@ -54,6 +56,7 @@
             "key": "field_61ba4b459b5c2",
             "label": "Background Video",
             "name": "pb_video",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 1,
@@ -81,6 +84,7 @@
             "key": "field_61931c130bd69",
             "label": "Title",
             "name": "pb_title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -100,6 +104,7 @@
             "key": "field_61931c130bd74",
             "label": "Subtitle",
             "name": "pb_subtitle",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -116,9 +121,35 @@
             "new_lines": ""
         },
         {
+            "key": "field_6544ab53f2939",
+            "label": "Button Type",
+            "name": "pb_button_type",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "regular-button": "Regular Button",
+                "trigger-popup": "Trigger Popup"
+            },
+            "default_value": "regular-button",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_61948348a577e",
             "label": "Button",
             "name": "pb_button",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -131,9 +162,119 @@
             "return_format": "array"
         },
         {
+            "key": "field_6544ac37f293a",
+            "label": "Popup Logo Image",
+            "name": "pb_popup_logo_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6544ab53f2939",
+                        "operator": "==",
+                        "value": "trigger-popup"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_6544ac57f293b",
+            "label": "Popup Main Title",
+            "name": "pb_popup_main_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6544ab53f2939",
+                        "operator": "==",
+                        "value": "trigger-popup"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_6544ac75f293c",
+            "label": "Popup Sub Title",
+            "name": "pb_popup_sub_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_6544ac9af293d",
+            "label": "Gravity Form Shortcode",
+            "name": "pb_gravity_form_shortcode",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "eg: [gravityform id=\"4\" tabindex=\"-1\" title=\"false\" description=\"false\" ajax=\"true\"]",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6544ab53f2939",
+                        "operator": "==",
+                        "value": "trigger-popup"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_61931c130ac2f",
             "label": "Settings",
             "name": "",
+            "aria-label": "",
             "type": "accordion",
             "instructions": "",
             "required": 0,
@@ -151,6 +292,7 @@
             "key": "field_61931c130ac35",
             "label": "Module ID",
             "name": "pb_module_id",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -184,5 +326,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1639599190
+    "show_in_rest": 0,
+    "modified": 1698999565
 }

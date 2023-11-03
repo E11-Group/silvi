@@ -6,6 +6,7 @@
             "key": "field_618a1bb0c3873",
             "label": "Page Builder",
             "name": "page_builder",
+            "aria-label": "",
             "type": "flexible_content",
             "instructions": "",
             "required": 0,
@@ -26,6 +27,7 @@
                             "key": "field_618baf1b5052e",
                             "label": "Billboard",
                             "name": "billboard",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -57,6 +59,7 @@
                             "key": "field_61b7bcc0bd43a",
                             "label": "Breadcrumbs",
                             "name": "breadcrumbs",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -88,6 +91,7 @@
                             "key": "field_619538e6afac7",
                             "label": "Call for action",
                             "name": "call_for_action",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -119,6 +123,7 @@
                             "key": "field_6191fba60c2b9",
                             "label": "Callout",
                             "name": "callout",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -150,6 +155,7 @@
                             "key": "field_61960afb20cbe",
                             "label": "Featured News",
                             "name": "featured_news",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -181,6 +187,7 @@
                             "key": "field_61a08dd4c8695",
                             "label": "General Content",
                             "name": "general_content",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -212,6 +219,7 @@
                             "key": "field_61e8637704bab",
                             "label": "Google Map",
                             "name": "google_map",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -243,6 +251,7 @@
                             "key": "field_619256484a54d",
                             "label": "Hero",
                             "name": "hero",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -274,6 +283,7 @@
                             "key": "field_61e866bd29b81",
                             "label": "Hero w\/Links",
                             "name": "hero_links",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -305,6 +315,7 @@
                             "key": "field_619498f39996e",
                             "label": "Icons Grid",
                             "name": "icons_grid",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -336,6 +347,7 @@
                             "key": "field_618e38e568813",
                             "label": "Image Boxes",
                             "name": "image_boxes",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -367,6 +379,7 @@
                             "key": "field_618a6e5af0bb6",
                             "label": "Image\/Content",
                             "name": "image_content",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -398,6 +411,7 @@
                             "key": "field_619dbc781a14a",
                             "label": "Instagram Feed",
                             "name": "instagram_feed",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -429,6 +443,7 @@
                             "key": "field_618a6103d8095",
                             "label": "Logo List",
                             "name": "logo_list",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -460,6 +475,7 @@
                             "key": "field_618a27effa557",
                             "label": "News",
                             "name": "news",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -491,6 +507,7 @@
                             "key": "field_619629d40c851",
                             "label": "News Filter",
                             "name": "news_filter",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -522,6 +539,7 @@
                             "key": "field_61931f31a35e5",
                             "label": "Page Banner",
                             "name": "page_banner",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -553,6 +571,7 @@
                             "key": "field_618bee51cc6b8",
                             "label": "Products Slider",
                             "name": "products_slider",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -584,6 +603,7 @@
                             "key": "field_619c8eb5197d4",
                             "label": "Staff",
                             "name": "staff",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -615,6 +635,7 @@
                             "key": "field_619bce395538c",
                             "label": "Teams",
                             "name": "teams",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -646,6 +667,7 @@
                             "key": "field_618a57421d686",
                             "label": "Timeline",
                             "name": "timeline",
+                            "aria-label": "",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -666,11 +688,43 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6544bcb03e83c": {
+                    "key": "layout_6544bcb03e83c",
+                    "name": "icons_grid_secondary",
+                    "label": "Icons Grid Secondary",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6544bcb03e83e",
+                            "label": "Icons Grid Secondary",
+                            "name": "icons_grid_secondary",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6544bc481a108"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
-            "button_label": "Add Row",
             "min": "",
-            "max": ""
+            "max": "",
+            "button_label": "Add Row"
         }
     ],
     "location": [
@@ -679,6 +733,13 @@
                 "param": "page_template",
                 "operator": "==",
                 "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-silvi.php"
             }
         ]
     ],
@@ -692,5 +753,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1642621316
+    "show_in_rest": 0,
+    "modified": 1699003589
 }

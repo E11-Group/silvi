@@ -5,15 +5,16 @@ if (!empty($data['module_id'])) {
     $block_id = 'block-' . uniqid();
 }
 $bgImage = $data['image']['url'];
-print_r();
+
 $add_video = "";
 if ( $data['bg_type']  == 'video') {
     $add_video .= ' video-container';
 }
-
+$title_classes = '';
 if ( $data['subtitle_style']  == 'long') {
     $title_classes .= ' hero__subtitle--alt';
-}?>
+}
+?>
 <section class="hero hero--small" id="<?php echo esc_attr($block_id); ?>">
     <div class="hero__image"
         <?php echo !empty($bgImage) ? 'style="background-image:url(' . esc_url($bgImage) . ');"' : ''; ?>>
@@ -28,17 +29,18 @@ if ( $data['subtitle_style']  == 'long') {
                     </h2>
                     <?php endif; ?>
 
-                    <?php if (!empty($data['button'])): ?>
-                    <?php $link = $data['button'];
-                            $link_url = $link['url'];
-                            $link_title = $link['title'];
-                            $link_target = $link['target'] ? $link['target'] : '_self';
-                            ?>
-                    <a class="btn" href="<?php echo esc_url($link_url); ?>"
-                        target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-                    <?php endif; ?>
-                    <a class="btn btn--large hero__fancybox-btn" href="#fancyboxHero" data-fancybox >FIND A SILVI-CERTIFIED CONTRACTOR NEAR
-                        YOU</a>
+                    <?php
+                    if($data['button_type'] == 'trigger-popup' && !empty($data['button'])) { ?>
+                        <a class="btn btn--large hero__fancybox-btn" href="#fancyboxHero" data-fancybox >
+                            <?php echo $data['button']['title']; ?>
+                        </a>
+                   <?php } else {
+                            if(!empty($data['button'])):
+                        ?>
+                        <a class="btn" href="<?php echo esc_url($data['button']['url']); ?>"
+                           target="<?php echo esc_attr(!empty($data['button']['target']) ? $data['button']['target'] : '_self'); ?>"><?php echo esc_html($data['button']['title']); ?></a>
+                   <?php endif;
+                    }  ?>
                 </div>
             </div>
         </div>
@@ -56,23 +58,37 @@ if ( $data['subtitle_style']  == 'long') {
             </video>
         </div>
         <?php endif; ?>
-        <div class="hero__fancybox-content" id="fancyboxHero">
+        <?php
+            if(!empty($data['popup_main_title']) || !empty($data['popup_sub_title']) || !empty($data['gravity_form_shortcode'])):
+        ?>
+        <div class="hero__fancybox-content" id="fancyboxHero" style="display: none">
             <button type="button" data-fancybox-close="" class="hero__popup-close" title="close">
                 <svg class="icon icon-cross">
                     <use xlink:href="#icon-cross"></use>
                 </svg>
             </button>
+            <?php
+            if(!empty($data['popup_main_title']) || !empty($data['popup_sub_title'])):
+            ?>
             <div class="hero__popup-heading">
+                <?php if(!empty($data['popup_logo_image'])): ?>
                 <figure class="hero__popup-media">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/logoSilvi.svg"
-                        alt="Description of image">
+                    <img src="<?php echo esc_url($data['popup_logo_image']['url']); ?>"
+                        alt="<?php echo esc_attr(!empty($data['popup_logo_image']['alt']) ? $data['popup_logo_image']['alt'] : ''); ?>">
                 </figure>
-                <h3 class="hero__popup-title">We know amazing contractors.</h3>
-                <h4 class="hero__popup-subtitle">Send us your info and we’ll help you find one.</h4>
+                <?php endif; ?>
+                <?php if(!empty($data['popup_main_title'])): ?>
+                <h3 class="hero__popup-title"><?php echo $data['popup_main_title']; ?></h3>
+                <?php endif; ?>
+                <?php if(!empty($data['popup_sub_title'])): ?>
+                <h4 class="hero__popup-subtitle"><?php echo $data['popup_sub_title']; ?></h4>
+                <?php endif; ?>
             </div>
+            <?php endif; ?>
+            <?php
+            if(!empty($data['gravity_form_shortcode'])): ?>
             <div class="hero__popup-form" id="your-form-element">
-                <?php
-                        echo do_shortcode( '[gravityform id="4" tabindex="-1" title="false" description="false" ajax="true"]' ); ?>
+                <?php echo do_shortcode( $data['gravity_form_shortcode'] ); ?>
              <input type="hidden" id="formSubmissionStatus" name="formSubmissionStatus" value="not-submitted">
         </div>
             <div class="hero__popup-confirmation">
@@ -90,6 +106,8 @@ if ( $data['subtitle_style']  == 'long') {
                     </h3>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
+            <?php endif; ?>
     </div>
 </section>

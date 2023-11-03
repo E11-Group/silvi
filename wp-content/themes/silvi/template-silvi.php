@@ -1,5 +1,6 @@
 <?php /* Template Name: silvi  */
 get_header(); ?>
+<?php include('modules/flex-content/flex-content.php') ?>
 <section class="icon-list">
     <div class="icon-list__wrap">
         <h2 class="icon-list__title">our residential services</h2>
