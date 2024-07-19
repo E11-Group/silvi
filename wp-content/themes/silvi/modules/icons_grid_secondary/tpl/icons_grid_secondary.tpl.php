@@ -11,8 +11,10 @@ if (!empty($data['module_id'])) {
         <?php if (!empty($data['title'])): ?>
             <h2 class="icon-list__title"><?php echo $data['title']; ?></h2>
         <?php endif; ?>
-        <?php if (!empty($data['grid'])): ?>
-            <div class="icon-list__grid">
+        <?php if (!empty($data['grid'])):
+            $gridClass = ' items'.count($data['grid']);
+            ?>
+            <div class="icon-list__grid<?php echo esc_attr($gridClass); ?>">
                 <?php foreach ($data['grid'] as $item):
                     $icon = $item['icon'];
                     $item_title = $item['title'];
@@ -38,8 +40,10 @@ if (!empty($data['module_id'])) {
                             </a>
                         <?php endif; ?>
                     </div>
-                <?php endforeach; ?>
+                <?php
+                endforeach; ?>
             </div>
+
         <?php endif; ?>
     </div>
 </section>

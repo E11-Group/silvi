@@ -642,6 +642,8 @@ $(document).ready(function () {
                     $(".fancybox-inner").removeClass("gallery-image-holder");
                 }
             });
+
+
 });
 $(function () {
 

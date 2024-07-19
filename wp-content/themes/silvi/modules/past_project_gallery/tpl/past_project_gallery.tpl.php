@@ -35,6 +35,7 @@ if (!empty($data['module_id'])) {
                 <?php endif; ?>
                 <?php
                 $item = 1;
+                if(!empty($item_gallery)):
                 foreach ($item_gallery as $gallery):
                     if ($item > 1):
                         ?>
@@ -46,6 +47,7 @@ if (!empty($data['module_id'])) {
                     endif;
                     $item++;
                 endforeach;
+                endif;
                 ?>
             </div>
             <?php
