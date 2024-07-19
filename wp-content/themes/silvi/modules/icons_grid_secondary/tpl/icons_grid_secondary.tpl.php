@@ -12,9 +12,10 @@ if (!empty($data['module_id'])) {
             <h2 class="icon-list__title"><?php echo $data['title']; ?></h2>
         <?php endif; ?>
         <?php if (!empty($data['grid'])):
-            $gridClass = ' items'.count($data['grid']);
+            $total = count($data['grid']);
+            $result = $total % 2 == 0 ? $total / 2  : ceil($total / 2);
             ?>
-            <div class="icon-list__grid<?php echo esc_attr($gridClass); ?>">
+            <div class="icon-list__grid" style="--item-col: <?php echo $result; ?>">
                 <?php foreach ($data['grid'] as $item):
                     $icon = $item['icon'];
                     $item_title = $item['title'];

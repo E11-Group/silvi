@@ -14,9 +14,14 @@ if (!empty($data['module_id'])) {
             </h2>
         </div>
     <?php endif; ?>
-    <div class="grid-popup__grid">
+    <?php
+    $total = count($data['gallery_item']);
+    $result = $total % 2 == 0 ? $total / 2  : ceil($total / 2);
+    ?>
+    <div class="grid-popup__grid" style="--item-col: <?php echo $result; ?>">
         <?php
         $count = 1;
+
         foreach ($data['gallery_item'] as $item):
             $item_title = $item['title'];
             $item_main_thumb = $item['image'];

@@ -24,11 +24,14 @@
   
   .icon-list__grid {
       max-width: 1440px;
-      display: grid;
-      grid-template-columns: repeat(5,1fr);
+      display: flex;
+     // grid-template-columns: repeat(5,1fr);
       gap: 24px;
       margin: 0 auto;
-      @media #{$tablet} {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    /*  @media #{$tablet} {
           grid-template-columns: repeat(4,1fr);
         }
         @media #{$phone} {
@@ -37,7 +40,10 @@
         @media #{$phone-portrait} {
           gap: 0px;
           grid-template-columns: repeat(2,1fr);
-        }
+        }*/
+    @media #{$phone-portrait} {
+      gap: 0px;
+    }
   }
 
   .icon-list__item {
@@ -48,6 +54,17 @@
       align-items: center;
       justify-content: center;
       padding: 27px 31px 10px 32px;
+    flex-basis: calc((100% / var(--item-col)) - 24px);
+    flex-shrink: 0;
+    @media #{$tablet} {
+      flex-basis: calc(25% - 24px);
+    }
+    @media #{$phone} {
+      flex-basis: calc(33.33% - 24px);
+    }
+    @media #{$phone-portrait} {
+      flex-basis: 50%;
+    }
   }
   .icon-list__item-has-link{
     transform: translate(0);
