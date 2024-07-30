@@ -47,14 +47,15 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  flex-basis: calc(100% / var(--item-col));
+  //flex-basis: calc(100% / var(--item-col));
+  flex-basis: 25%;
   flex-shrink: 0;
   @media #{$tablet} {
     min-height: 300px;
-    flex-basis: 25%;
+    //flex-basis: 25%;
   }
   @media #{$header} {
-    flex-basis: 33.33%;
+    //flex-basis: 33.33%;
   }
   @media #{$phone} {
     flex-basis: 50%;
@@ -87,6 +88,73 @@
     }
   }
 }
+
+.grid-popup__gridFourThreeTwoColumn {
+  .grid-popup__item {
+    &:nth-last-child(-n+2) {
+      flex-basis: 50%;
+      @media #{$phone-portrait} {
+        flex-basis: 100%;
+      }
+    }
+
+    &:nth-last-child(3),
+    &:nth-last-child(4),
+    &:nth-last-child(5) {
+      flex-basis: 33.33%;
+      @media #{$phone} {
+        //flex-basis: 50%;
+      }
+      @media #{$phone-portrait} {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+.grid-popup__gridThreeTwoColumn {
+  .grid-popup__item {
+    flex-basis: 33.33%;
+    @media #{$phone} {
+     // flex-basis: 50%;
+    }
+    @media #{$phone-portrait} {
+      flex-basis: 100%;
+    }
+    &:nth-last-child(-n+2) {
+      flex-basis: 50% ;
+      @media #{$phone-portrait} {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+.grid-popup__gridFourTwoColumn {
+  .grid-popup__item {
+    &:nth-last-child(-n+2) {
+      flex-basis: 50% ;
+      @media #{$phone-portrait} {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+.grid-popup__gridFourThreeColumn {
+  .grid-popup__item {
+    &:nth-last-child(-n+3) {
+      flex-basis: 33.33%;
+      @media #{$phone} {
+        //flex-basis: 50%;
+      }
+      @media #{$phone-portrait} {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
 
 .grid-popup__media {
   height: 100%;
@@ -276,3 +344,4 @@
     }
   }
 }
+

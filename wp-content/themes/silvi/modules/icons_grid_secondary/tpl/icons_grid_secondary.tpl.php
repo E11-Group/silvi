@@ -12,10 +12,27 @@ if (!empty($data['module_id'])) {
             <h2 class="icon-list__title"><?php echo $data['title']; ?></h2>
         <?php endif; ?>
         <?php if (!empty($data['grid'])):
-            $total = count($data['grid']);
-            $result = $total % 2 == 0 ? $total / 2  : ceil($total / 2);
+	        $total = count( $data['grid'] );
+	        $result = $total % 2 == 0 ? $total / 2 : ceil( $total / 2 );
+
+	        $altClass = '';
+	        if ( $total % 4 == 0 ) {
+		        $altClass = ' icon-list__gridFourColumn';
+	        } elseif ( $total % 4 == 1 ) {
+		        if ( $total == 5 ) {
+			        $altClass = ' icon-list__gridThreeTwoColumn';
+		        } else {
+			        $altClass = ' icon-list__gridFourThreeTwoColumn';
+		        }
+
+	        } elseif ( $total % 4 == 2 ) {
+		        $altClass = ' icon-list__gridFourTwoColumn';
+	        } elseif ( $total % 4 == 3 ) {
+		        $altClass = ' icon-list__gridFourThreeColumn';
+	        }
+
             ?>
-            <div class="icon-list__grid" style="--item-col: <?php echo $result; ?>">
+            <div class="icon-list__grid<?php echo esc_attr($altClass); ?>" style="--item-col: <?php echo $result; ?>">
                 <?php foreach ($data['grid'] as $item):
                     $icon = $item['icon'];
                     $item_title = $item['title'];
