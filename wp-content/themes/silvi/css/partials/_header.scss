@@ -1,6 +1,7 @@
 .header {
-    position: fixed;
-    top: 0;
+    //position: fixed;
+    position: absolute;
+    //top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
@@ -34,6 +35,7 @@
     position: fixed !important;
     background-color: $black;
     box-shadow: 0 4px 8px rgba($black-alt, 0.5);
+    top: 0;
     * {
         transition: ease all 0.3s;
     }

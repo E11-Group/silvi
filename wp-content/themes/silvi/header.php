@@ -63,12 +63,16 @@
 </script>
 	
 </head>
-<?php if (is_single() && 'post' == get_post_type()) {
-    $section_classes .= ' header--alt';
+<?php
+
+if (is_single() && 'post' == get_post_type()) {
+    $section_classes = ' header--alt';
 } elseif (is_category() || is_archive() || is_single() || is_home() && 'post' == get_post_type()) {
-    $section_classes .= ' header--alt';
+    $section_classes = ' header--alt';
 } elseif (is_404()) {
-    $section_classes .= ' header--alt';
+    $section_classes = ' header--alt';
+} else {
+	$section_classes = '';
 }
 $header_logo = get_field('header_logo', 'options');
 // Determine if a hero module is first on the page
@@ -94,6 +98,37 @@ endif;
 <body <?php body_class($pageBuilderClass); ?>>
 <div class="site">
     <div class="site-wrapper">
+	    <?php
+	    $notice_content = get_field( 'notice_bar_text', 'option' );
+	    $notice_images  = get_field( 'notice_bar_images', 'option' );
+	    if ( is_front_page() && ( ! empty( $notice_content ) || ! empty( $notice_images ) ) ): ?>
+            <div class="notice-bar">
+                <div class="container">
+                    <div class="notice-bar__inner">
+					    <?php if ( ! empty( $notice_content ) ): ?>
+                            <div class="notice-bar__content<?php if ( empty( $notice_images ) ) {
+							    echo ' full';
+						    } ?>">
+							    <?php echo $notice_content; ?>
+                            </div>
+					    <?php endif; ?>
+					    <?php if ( ! empty( $notice_images ) ): ?>
+                            <div class="notice-bar__images<?php if(empty($notice_content)) { echo ' full'; } ?>">
+							    <?php foreach ( $notice_images as $notice_image ):
+								    $img = $notice_image['image'];
+								    if ( ! empty( $img ) ):
+									    ?>
+                                        <figure class="notice-bar__image">
+										    <?php echo wp_get_attachment_image( $img['ID'], 'full', '', array( 'class' => '' ) ); ?>
+                                        </figure>
+								    <?php endif; endforeach; ?>
+                            </div>
+					    <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+	    <?php endif;
+	    ?>
         <header class="header js-header<?php echo esc_attr($section_classes); ?>">
             <div class="container">
                 <div class="header-primary">
