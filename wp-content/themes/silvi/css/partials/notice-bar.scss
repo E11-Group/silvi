@@ -9,6 +9,9 @@
   justify-content: center;
   align-items: center;
   gap: 25px;
+  @media screen and (max-width: 1023px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .notice-bar__content {
