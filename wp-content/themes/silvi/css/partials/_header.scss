@@ -1,6 +1,7 @@
 .header {
-    position: fixed;
-    top: 0;
+    //position: fixed;
+    position: absolute;
+    //top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
@@ -34,6 +35,7 @@
     position: fixed !important;
     background-color: $black;
     box-shadow: 0 4px 8px rgba($black-alt, 0.5);
+    top: 0;
     * {
         transition: ease all 0.3s;
     }
@@ -349,8 +351,16 @@
         flex-wrap: wrap;
         align-items: center;
 
-        li > a {
-            margin: 0 4px;
+        li  {
+            > a {
+                margin: 0 4px;
+
+            }
+            &:not(.header-button) {
+                > a {
+                    color: $primary-color;
+                }
+            }
         }
     }
 }
@@ -557,6 +567,7 @@
                 border: 1px solid $white;
                 padding: 6px 10px 4px;
                 display: inline-block;
+                color: $white;
             }
 
             &:hover,
@@ -573,7 +584,8 @@
             display: block;
             @include fsz(24px);
             font-family: $alt-family;
-            color: $white;
+           // color: $white;
+            color: $primary-color;
             font-weight: 500;
             text-transform: uppercase;
             padding: 10px 0;

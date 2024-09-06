@@ -86,7 +86,7 @@ $map_control_inv = 'true';
                                      data-address="<?php echo $address . ' ' . $city . ', ' . $state . ' ' . $zip . ' ' . $phone; ?>">
                                     <h3 class="map-results__location-title"><?php the_title(); ?></h3>
                                     <address class="map-results__address"><?php echo $address . ' <br /> ' . $city . ', ' . $state . ' ' . $zip . ' <br /> ' . $phone; ?></address>
-                                    <? if(get_field('url') != ""){
+                                    <?php if(get_field('url') != ""){
                                         echo "<div class='featured-news__cat' style='margin-top:20px;'><a href='".get_field('url')."'>LEARN MORE</a></div>";
                                     }?>
                                 </div>
