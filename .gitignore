@@ -12,6 +12,7 @@
 .sass-cache
 .svn
 .well-known
+.history
 Thumbs.db
 cache
 db.php
