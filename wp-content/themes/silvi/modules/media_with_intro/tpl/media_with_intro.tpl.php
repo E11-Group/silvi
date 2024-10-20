@@ -7,24 +7,31 @@ if (!empty($data['module_id'])) {
 
 $alignment = $data['alignment'];
 $addClass = '';
-if($alignment == 'right'){
-$addClass = 'right-alignment';
+if ($alignment == 'right') {
+    $addClass = 'right-alignment';
 }
 
+$hasVideo = '';
+if (!empty($data['background_video'])) {
+    $hasVideo = 'has-video';
+}
 ?>
 <section class="media-intro <?php echo $addClass; ?>" id="<?php echo esc_attr($block_id); ?>" data-animate>
     <div class="media-intro__inner">
         <?php if (!empty($data['image'])): ?>
-            <figure class="media-intro__bg-image">
+            <figure class="media-intro__bg-image <?php echo $hasVideo; ?>">
                 <img src="<?php echo esc_url($data['image']['url']); ?>"
                     alt="<?php echo esc_attr($data['image']['alt']); ?>">
             </figure>
         <?php endif; ?>
-        <div class="media-intro__video-container">
-            <video aria-hidden="true" class="media-intro__video video" playsinline autoplay muted loop>
-                <source src="<?php echo esc_url($data['background_video']['url']); ?>" type="video/mp4">
-            </video>
-        </div>
+        <?php if (!empty($data['background_video'])): ?>
+            <div class="media-content__video-container">
+                <video aria-hidden="true" class="media-content__video video" playsinline autoplay muted loop
+                    poster="<?php echo esc_url($data['image']['url']); ?>">
+                    <source src="<?php echo esc_url($data['background_video']['url']); ?>" type="video/mp4">
+                </video>
+            </div>
+        <?php endif; ?>
         <div class="media-intro__wrap">
             <?php if (!empty($data['title'])): ?>
                 <h2 class="media-intro__title"><?php echo $data['title']; ?></h2>

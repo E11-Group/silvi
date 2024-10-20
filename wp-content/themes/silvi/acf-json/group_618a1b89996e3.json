@@ -369,6 +369,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67151bd27c39e": {
+                    "key": "layout_67151bd27c39e",
+                    "name": "media_content",
+                    "label": "Media Content",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67151bd27c3a0",
+                            "label": "Media Content",
+                            "name": "media_content",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67151a32a009c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_619498ef9996d": {
                     "key": "layout_619498ef9996d",
                     "name": "icons_grid",
@@ -875,5 +907,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729429879
+    "modified": 1729436680
 }
