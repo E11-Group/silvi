@@ -91,7 +91,7 @@ if (function_exists('have_rows')):
             $moduleCount++;
             if ($moduleCount == 1) {
                 $layout = get_row_layout();
-                if ($layout == "hero" || $layout == "hero_links" || $layout == "page_banner") {
+                if ($layout == "hero" || $layout == "hero_links" || $layout == "hero_with_icons" || $layout == "page_banner") {
                     $pageBuilderClass = 'has-hero-module';
                 }
             }
