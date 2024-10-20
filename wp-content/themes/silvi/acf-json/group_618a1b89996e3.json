@@ -337,6 +337,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_671500d52d2f7": {
+                    "key": "layout_671500d52d2f7",
+                    "name": "media_with_intro",
+                    "label": "Media w\/Intro",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_671500f72d2fa",
+                            "label": "Media w\/Intro",
+                            "name": "media_with_intro",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6714ff30c6d02"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_619498ef9996d": {
                     "key": "layout_619498ef9996d",
                     "name": "icons_grid",
@@ -843,5 +875,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729425462
+    "modified": 1729429879
 }
