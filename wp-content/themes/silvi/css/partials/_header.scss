@@ -39,6 +39,9 @@
   * {
     transition: ease all 0.3s;
   }
+  .primaryNav>li.has-megamenu:after{
+      top: 47px;
+    }
 }
 
 .no-hero-module {
@@ -632,7 +635,7 @@
 
 .megamenu__item {
   position: absolute;
-  top: calc(100% - 63px);
+  top: calc(100% - 40px);
   right: 20%;
   width: 80vw;
   max-width: 800px;
@@ -834,7 +837,7 @@
 }
 
 .primaryNav > li.has-megamenu:after {
-  top: 25px;
+  top: 40px;
 }
 
 .megamenu .megamenu__card--style {

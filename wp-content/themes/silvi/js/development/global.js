@@ -535,8 +535,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-  //Script added for smooth scroll
-  $('a[href*="#"]')
+// Script added for smooth scroll
+$('a[href*="#"]')
   .not('[href="#"]')
   .not('[href="#0"]')
   .not('a[data-fancybox]')
@@ -545,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var target = $(this.hash);
       if (target.length) {
           $('html, body').animate({
-              scrollTop: target.offset().top - 50
+              scrollTop: target.offset().top - 120 
           }, 1000);
           window.location.hash = this.hash;
       }

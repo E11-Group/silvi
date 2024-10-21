@@ -92,25 +92,6 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6714e27274457",
-                    "label": "Item",
-                    "name": "",
-                    "aria-label": "",
-                    "type": "accordion",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "open": 0,
-                    "multi_expand": 0,
-                    "endpoint": 0,
-                    "parent_repeater": "field_6714deae92211"
-                },
-                {
                     "key": "field_6714deaea0615",
                     "label": "Icon Image",
                     "name": "icon_image",
@@ -156,25 +137,6 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6714deae92211"
-                },
-                {
-                    "key": "field_6714e28074458",
-                    "label": "Item Endpoint",
-                    "name": "",
-                    "aria-label": "",
-                    "type": "accordion",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "open": 0,
-                    "multi_expand": 0,
-                    "endpoint": 1,
                     "parent_repeater": "field_6714deae92211"
                 }
             ]
@@ -236,5 +198,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729428897
+    "modified": 1729525024
 }

@@ -110,7 +110,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "field_61b7bfc702495",
-            "button_label": "Add data",
+            "button_label": "Add button",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -191,5 +191,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729436600
+    "modified": 1729525201
 }
