@@ -737,27 +737,61 @@
 }
 
 .megamenu__card--style {
-  .mega-menu__primary-link > a {
-    font-family: $alt-family;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1.67;
-    color: $black-100;
-    transition: all 0.3s ease;
-    &:hover,
-    &:focus {
-      color: $primary-color;
+  position: relative;
+  .mega-menu__primary-link {
+    gap: 47px;
+    > a {
+      font-family: $alt-family;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.67;
+      text-transform: uppercase;
+      color: $black-100;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid $black-100;
+      &:hover,
+      &:focus {
+        color: $primary-color;
+        .icon {
+          fill: $primary-color;
+        }
+      }
       .icon {
-        fill: $primary-color;
+        width: 26px;
+        height: 26px;
+        transition: all 0.1s ease;
       }
     }
-    .icon {
-      transition: all 0.3s ease;
+    &.active {
+      > a {
+        color: $primary-color;
+        .icon {
+          fill: $primary-color;
+        }
+      }
+      .mega-menu__secondary-list {
+        display: flex;
+      }
     }
   }
 }
 
 .mega-menu__secondary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 45px;
+  min-width: 285px;
+  background: $white;
+  left: calc(100% + 47px);
   a {
     font-family: $primary-family;
     font-size: 14px;
@@ -772,11 +806,10 @@
   }
 }
 
-
-.primaryNav>li.has-megamenu:after{
-    top: 25px;
+.primaryNav > li.has-megamenu:after {
+  top: 25px;
 }
 
 .megamenu .megamenu__card--style {
-    padding: 33px 7px 41px 13px;
+  padding: 33px 7px 41px 13px;
 }

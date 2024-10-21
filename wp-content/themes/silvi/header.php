@@ -225,7 +225,7 @@ endif;
                                                     $link_target = $mega_links['target'] ? $mega_links['target'] : '_self';
                                                     ?>
                                                     <div class="mega-menu__primary-link">
-                                                        <a href="<?php echo esc_url($link_url); ?>"
+                                                        <a class="mega-menu__primary-link-item" href="<?php echo esc_url($link_url); ?>"
                                                             target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?><svg
                                                                 class="icon icon-silviRightArrow">
                                                                 <use xlink:href="#icon-silviRightArrow"></use>
