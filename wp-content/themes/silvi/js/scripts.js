@@ -700,13 +700,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// Script added for smooth scroll
+// Smooth scrolling when clicking an internal link
 $('a[href*="#"]')
   .not('[href="#"]')
   .not('[href="#0"]')
   .not('a[data-fancybox]')
   .click(function (e) {
-      //e.preventDefault();
       var target = $(this.hash);
       if (target.length) {
           $('html, body').animate({
@@ -715,6 +714,18 @@ $('a[href*="#"]')
           window.location.hash = this.hash;
       }
   });
+
+$(window).on('load', function () {
+    if (window.location.hash) {
+        var target = $(window.location.hash);
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 120 
+            }, 0);
+        }
+    }
+});
+
 $(function () {
 
     $('.js-header').e11_MobileNav();
