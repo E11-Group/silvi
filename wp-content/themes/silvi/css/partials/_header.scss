@@ -632,7 +632,7 @@
 
 .megamenu__item {
   position: absolute;
-  top: calc(100% - 22px);
+  top: calc(100% - 63px);
   right: 20%;
   width: 80vw;
   max-width: 800px;
@@ -731,6 +731,10 @@
   }
 }
 
+.megamenu__item{
+  min-height: 275px;
+}
+
 .megamenu__card {
   width: 33.33%;
   background-color: $primary-color;
@@ -814,7 +818,6 @@
   width: 100%;
   top: 45px;
   min-width: 285px;
-  background: $white;
   left: calc(100% + 47px);
   a {
     font-family: $primary-family;

@@ -543,3 +543,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+  //Script added for smooth scroll
+  $('a[href*="#"]')
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .not('a[data-fancybox]')
+  .click(function (e) {
+      //e.preventDefault();
+      var target = $(this.hash);
+      if (target.length) {
+          $('html, body').animate({
+              scrollTop: target.offset().top - 50
+          }, 1000);
+          window.location.hash = this.hash;
+      }
+  });

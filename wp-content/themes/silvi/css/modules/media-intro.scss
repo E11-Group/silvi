@@ -54,6 +54,12 @@
   font-weight: 500;
   line-height: normal;
   margin-bottom: 14px;
+  a{
+    &:hover{
+      text-decoration: none;
+      color: $black-100;
+    }
+  }
 }
 
 .media-intro__bg-image {
