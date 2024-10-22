@@ -66,6 +66,24 @@
                     "parent_repeater": "field_67174448d7ac7"
                 },
                 {
+                    "key": "field_67177ad01adf2",
+                    "label": "link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_67174448d7ac7"
+                },
+                {
                     "key": "field_6717440616048",
                     "label": "Background Image",
                     "name": "image",
@@ -243,5 +261,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729579769
+    "modified": 1729592051
 }
