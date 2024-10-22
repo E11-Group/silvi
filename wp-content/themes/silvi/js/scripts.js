@@ -241,16 +241,16 @@ $(function () {
                 dots: false
             }
         },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false,
-                    arrows: false
-                }
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+                arrows: false
             }
+        }
         ]
     }
     $('.js-products-showcase-slider').slick(productSettings);
@@ -313,15 +313,15 @@ $(function () {
                 dots: false
             }
         },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false
-                }
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false
             }
+        }
         ]
     }).on('afterChange', function (event, slick, currentSlide, nextSlide) {
         var activeSlide = $('.js-hero-thumbnail .hero__menu-item.slick-slide.slick-active');
@@ -355,15 +355,15 @@ $(function () {
                 dots: false
             }
         },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false
-                }
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false
             }
+        }
         ]
     }).on('afterChange', function (event, slick, currentSlide, nextSlide) {
         var activeSlide = $('.js-hero-thumbnail .hero__menu-item.slick-slide.slick-active');
@@ -414,16 +414,16 @@ $(function () {
                 dots: false
             }
         },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false,
-                    arrows: false
-                }
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+                arrows: false
             }
+        }
         ]
     }
     $('.js-news-slider').slick(newsSettings);
@@ -533,6 +533,90 @@ $(function () {
 
 });
 
+
+// Smooth scrolling when clicking an internal link
+$('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .not('a[data-fancybox]')
+    .click(function (e) {
+        var target = $(this.hash);
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 120
+            }, 1000);
+            window.location.hash = this.hash;
+        }
+    });
+
+$(window).on('load', function () {
+    if (window.location.hash) {
+        var target = $(window.location.hash);
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 120
+            }, 0);
+        }
+    }
+});
+
+
+
+//mega menu
+
+document.addEventListener("DOMContentLoaded", function () {
+    const currentUrl = window.location.href;
+    const megaMenuItems = document.querySelectorAll('.megamenu__item');
+
+    // Handle active class for each megamenu__item individually
+    megaMenuItems.forEach(function (menuItem) {
+        const menuLinks = menuItem.querySelectorAll('.mega-menu__primary-link-item');
+        let isActive = false;
+
+        menuLinks.forEach(function (link) {
+            if (link.href === currentUrl) {
+                link.closest('.mega-menu__primary-link').classList.add('active');
+                isActive = true;
+            }
+        });
+        if (!isActive) {
+            const firstPrimaryLink = menuItem.querySelector('.mega-menu__primary-link');
+            if (firstPrimaryLink) {
+                firstPrimaryLink.classList.add('active');
+            }
+        }
+        menuLinks.forEach(function (link) {
+            const parentLink = link.closest('.mega-menu__primary-link');
+
+            link.addEventListener('mouseenter', function () {
+                menuItem.querySelectorAll('.mega-menu__primary-link.active').forEach(function (activeLink) {
+                    activeLink.classList.remove('active');
+                });
+                parentLink.classList.add('active');
+            });
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const megaMenuItems = document.querySelectorAll('.megamenu__item');
+
+    megaMenuItems.forEach(function (menuItem) {
+        const innerMenu = menuItem.querySelector('.megamenu__inner');
+        const secondaryLists = menuItem.querySelectorAll('.mega-menu__secondary-list');
+
+        let maxHeight = 0;
+
+        secondaryLists.forEach(function (list) {
+            maxHeight = Math.max(maxHeight, list.offsetHeight);
+        });
+        if (maxHeight > 0) {
+            innerMenu.style.height = `${maxHeight + 100}px`;
+        }
+    });
+});
+
 //Mega Menu
 var $navDropdownLink = $('.main-navigation .has-megamenu > a');
 $navDropdownLink.each(function () {
@@ -541,56 +625,91 @@ $navDropdownLink.each(function () {
         $parentLiID = $parentLi.attr('id'),
         $megaMenu = $("." + $parentLiID),
         activeClass = 'is-active';
+
+    if (!$megaMenu.length) return; // Ensure $megaMenu exists
+
+    // Hover actions for the main link
     $this.on('mouseenter', function (event) {
         event.preventDefault();
         $parentLi.addClass(activeClass);
         $megaMenu.addClass(activeClass);
+        dynamicMegaMenuPosition($megaMenu, $parentLi);
     });
 
+    // Hover actions for the mega menu
     $megaMenu.on('mouseenter', function (event) {
         event.preventDefault();
         $parentLi.addClass(activeClass);
         $megaMenu.addClass(activeClass);
-
     }).on('mouseleave', function (event) {
         event.preventDefault();
         $parentLi.removeClass(activeClass);
         $megaMenu.removeClass(activeClass);
     });
 
+    // Mouse leave for parent li
     $parentLi.on('mouseleave', function (event) {
         event.preventDefault();
         $parentLi.removeClass(activeClass);
         $megaMenu.removeClass(activeClass);
     });
 
+    // Click event to close the mega menu
     $('.megamenu a').on('click', function (e) {
         $parentLi.removeClass(activeClass);
         $megaMenu.removeClass(activeClass);
-    })
+    });
 });
 
-function dynamicMegaMenuPosition() {
+function dynamicMegaMenuPosition($megaMenu, $parentLi) {
+    if (!$megaMenu || !$megaMenu.length || !$megaMenu.is(':visible')) return; // Avoid errors
+
     if ($('.header').length > 0) {
-        var targetElm = $('.megamenu__item'),
-            container = $('.header .container'),
+        var container = $('.header .container'),
             containerWidth = container.innerWidth(),
-            windowWidth = $(window).width() + 32,
-            containerOffsetLeft = container.offset().left,
-            totalOffset = windowWidth - (containerWidth + containerOffsetLeft);
-        targetElm.css('right', totalOffset)
+            windowWidth = $(window).width(),
+            containerOffsetLeft = container.offset().left;
+
+        if ($megaMenu.hasClass('has-links')) {
+            // Calculate the center alignment
+            var parentLiWidth = $parentLi.outerWidth(),
+                megaMenuWidth = $megaMenu.outerWidth(),
+                parentLiOffset = $parentLi.offset().left,
+                leftPosition = parentLiOffset + (parentLiWidth / 2) - (megaMenuWidth / 2);
+
+            // Ensure the mega menu doesn't overflow the screen width
+            if (leftPosition + megaMenuWidth > windowWidth) {
+                leftPosition = windowWidth - megaMenuWidth - 16;
+            }
+
+            if (leftPosition < 0) {
+                leftPosition = 16;
+            }
+
+            $megaMenu.css({ left: leftPosition, right: 'auto' });
+        } else {
+            // Default to right alignment
+            var totalOffset = windowWidth - (containerWidth + containerOffsetLeft);
+            $megaMenu.css('right', totalOffset);
+        }
     }
 }
 
-dynamicMegaMenuPosition()
-
+// Handle dynamic positioning on resize and scroll
 $(window).on('resize scroll', function () {
-    dynamicMegaMenuPosition()
-})
+    var $activeMegaMenu = $('.megamenu__item.is-active'),
+        $activeParentLi = $('.main-navigation .has-megamenu > li.is-active');
 
+    if ($activeMegaMenu.length && $activeParentLi.length) {
+        dynamicMegaMenuPosition($activeMegaMenu, $activeParentLi);
+    }
+});
+
+// Close functionality for the mega menu
 $('.mega-menu__close').on('click', function () {
     $('.main-navigation .has-megamenu > a, .megamenu__item').removeClass('is-active');
 });
+
 
 $(window).scroll(function () {
     doAnimateCss();
@@ -614,6 +733,39 @@ function animateCss(elements) {
     });
 
 }
+
+
+
+$(document).ready(function () {
+    //Script added to wrap all elements of form in a single div for banner form on silvi page
+    function heroFormWrapper() {
+        if ($('.hero__popup-form .gfield').length) {
+            var $fieldsToWrap = $('.hero__popup-form .gfield').not('.popup-form-header');
+            $fieldsToWrap.wrapAll('<div class="popup-form__body"><div class="popup-form__body-inner"></div></div>');
+
+            var $gformFooter = $('.hero__popup-form .gform_footer');
+            $gformFooter.find('*').wrapAll('<div class="gform_footer__inner"></div>');
+        }
+    }
+    heroFormWrapper();
+    jQuery(document).on("gform_page_loaded", function (event, form_id, current_page) {
+        heroFormWrapper();
+    });
+
+    //Script added for the project past gallery fancybox
+    $(".grid-popup__item [data-fancybox]").fancybox({
+        beforeLoad: function (instance, current) {
+            $(".fancybox-inner").addClass("gallery-image-holder");
+        },
+        afterClose: function (instance, current) {
+            $(".fancybox-inner").removeClass("gallery-image-holder");
+        }
+    });
+
+});
+
+
+
 
 $(function () {
 
