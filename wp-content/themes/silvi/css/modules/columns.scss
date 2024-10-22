@@ -100,6 +100,9 @@
     }
     &.has-no-image{
         padding: 122px 0 123px;
+        @media #{$tablet} {
+            padding: 70px 30px;
+          }
         .columns__title{
             color: $black-100;
             line-height: 1.44;
