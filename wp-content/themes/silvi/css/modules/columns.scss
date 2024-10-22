@@ -98,6 +98,23 @@
     @media #{$tablet} {
         padding: 66px 40px 62px;
     }
+    &.has-no-image{
+        padding: 122px 0 123px;
+        .columns__title{
+            color: $black-100;
+            line-height: 1.44;
+            margin-bottom: 7px;
+        }
+        .columns__description {
+            line-height: 1.17;
+            color: $black-100;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+        .columns__inner {
+            max-width: 735px;
+        }
+    }
 }
 
 .columns__column--image {
