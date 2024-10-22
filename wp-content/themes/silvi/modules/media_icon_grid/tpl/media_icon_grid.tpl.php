@@ -24,8 +24,16 @@ $list_item = $data['list_item']
             </div>
             <div class="hero-icons__wrap">
                 <div class="hero-icons__primary">
-                    <?php if (!empty($list['title'])): ?>
-                        <h2 class="media_icon_grid__title"><?php echo $list['title']; ?></h2>
+                    <?php if (!empty($list['title']) || !empty($list['link'])): ?>
+                        <h2 class="media_icon_grid__title">
+                            <?php if (!empty($list['link'])): ?>
+                                <a href="<?php echo $list['link']['url']; ?>">
+                                    <?php echo $list['title'] ? $list['title'] : $list['link']['title']; ?>
+                                </a>
+                            <?php else: ?>
+                                <?php echo $list['title']; ?>
+                            <?php endif; ?>
+                        </h2>
                     <?php endif; ?>
                     <?php if (!empty($list['icons'])): ?>
                         <div class="hero-icons__secondary">
