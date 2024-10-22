@@ -210,9 +210,12 @@ endif;
                             $links = get_sub_field('mm_links');
                             $choose_mega_menu_styles = get_sub_field('choose_mega_menu_styles');
                             $mega_links_list = get_sub_field('mega_links_list');
-
+                            $addClass = "";
+                            if ($choose_mega_menu_styles == 'menu2') {
+                                $addClass = "has-links";
+                            }
                             ?>
-                            <div class="megamenu__item <?php echo $parent_menu_id; ?>">
+                            <div class="megamenu__item <?php echo $parent_menu_id; ?> <?php echo $addClass; ?>">
                                 <div class="megamenu__inner">
                                     <?php if ($choose_mega_menu_styles == 'menu2'): ?>
                                         <div class="megamenu__card--style">

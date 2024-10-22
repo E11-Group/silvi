@@ -635,7 +635,7 @@
 
 .megamenu__item {
   position: absolute;
-  top: calc(100% - 40px);
+  top: calc(100% - 47px);
   right: 20%;
   width: 80vw;
   max-width: 800px;
@@ -842,4 +842,10 @@
 
 .megamenu .megamenu__card--style {
   padding: 33px 7px 41px 13px;
+}
+
+.megamenu .megamenu__item {
+  &.has-links {
+    max-width: 589px;
+  }
 }
