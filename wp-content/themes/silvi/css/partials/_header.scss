@@ -39,9 +39,9 @@
   * {
     transition: ease all 0.3s;
   }
-  .primaryNav>li.has-megamenu:after{
-      top: 47px;
-    }
+  .primaryNav > li.has-megamenu:after {
+    top: 47px;
+  }
 }
 
 .no-hero-module {
@@ -565,32 +565,32 @@
       &:focus,
       &:active {
         a {
-            display: block;
-            @include fsz(24px);
-            font-family: $alt-family;
-           // color: $white;
-            color: $primary-color;
-            font-weight: 500;
-            text-transform: uppercase;
-            padding: 10px 0;
+          display: block;
+          @include fsz(24px);
+          font-family: $alt-family;
+          // color: $white;
+          color: $primary-color;
+          font-weight: 500;
+          text-transform: uppercase;
+          padding: 10px 0;
 
-            &:hover,
-            &:focus {
-                color: $primary-color;
-            }
+          &:hover,
+          &:focus {
+            color: $primary-color;
+          }
         }
 
         ul {
-            margin-bottom: 6px;
-            margin-top: 2px;
+          margin-bottom: 6px;
+          margin-top: 2px;
 
-            li {
-                a {
-                    color: $white;
-                    font-family: $primary-family;
-                    font-weight: normal;
-                }
+          li {
+            a {
+              color: $white;
+              font-family: $primary-family;
+              font-weight: normal;
             }
+          }
         }
       }
     }
@@ -734,7 +734,7 @@
   }
 }
 
-.megamenu__item{
+.megamenu__item {
   min-height: 275px;
 }
 
@@ -847,5 +847,19 @@
 .megamenu .megamenu__item {
   &.has-links {
     max-width: 589px;
+  }
+}
+
+.primaryNav > li.has-megamenu > a {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    z-index: 1;
   }
 }
