@@ -401,6 +401,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_671745d9e071b": {
+                    "key": "layout_671745d9e071b",
+                    "name": "media_icon_grid",
+                    "label": "Media\/Icon Grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_671745dae071d",
+                            "label": "Media\/Icon Grid",
+                            "name": "media_icon_grid",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6717440603db7"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_619498ef9996d": {
                     "key": "layout_619498ef9996d",
                     "name": "icons_grid",
@@ -907,5 +939,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729436680
+    "modified": 1729578616
 }

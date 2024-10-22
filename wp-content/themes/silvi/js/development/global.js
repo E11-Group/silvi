@@ -369,6 +369,34 @@ $(function () {
 });
 
 
+// Smooth scrolling when clicking an internal link
+$('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .not('a[data-fancybox]')
+    .click(function (e) {
+        var target = $(this.hash);
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 120
+            }, 1000);
+            window.location.hash = this.hash;
+        }
+    });
+
+$(window).on('load', function () {
+    if (window.location.hash) {
+        var target = $(window.location.hash);
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 120
+            }, 0);
+        }
+    }
+});
+
+
+
 //mega menu
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -573,28 +601,3 @@ $(document).ready(function () {
 
 
 
-// Smooth scrolling when clicking an internal link
-$('a[href*="#"]')
-    .not('[href="#"]')
-    .not('[href="#0"]')
-    .not('a[data-fancybox]')
-    .click(function (e) {
-        var target = $(this.hash);
-        if (target.length) {
-            $('html, body').animate({
-                scrollTop: target.offset().top - 120
-            }, 1000);
-            window.location.hash = this.hash;
-        }
-    });
-
-$(window).on('load', function () {
-    if (window.location.hash) {
-        var target = $(window.location.hash);
-        if (target.length) {
-            $('html, body').animate({
-                scrollTop: target.offset().top - 120
-            }, 0);
-        }
-    }
-});

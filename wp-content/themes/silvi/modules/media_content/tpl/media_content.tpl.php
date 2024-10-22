@@ -26,6 +26,7 @@ if (!empty($data['background_video'])) {
             </video>
         </div>
     <?php endif; ?>
+    <?php if (!empty($data['title']) || !empty($data['buttons']) || !empty($data['content'])): ?>
     <div class="container">
         <div class="media-content__wrap">
             <?php if (!empty($data['title'])): ?>
@@ -50,5 +51,6 @@ if (!empty($data['background_video'])) {
             <?php endif; ?>
         </div>
     </div>
+    <?php endif; ?>
 </section>
 <!-- .hero ends -->
