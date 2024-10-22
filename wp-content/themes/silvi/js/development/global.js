@@ -460,7 +460,10 @@ $navDropdownLink.each(function () {
         $parentLiID = $parentLi.attr('id'),
         $megaMenu = $("." + $parentLiID),
         activeClass = 'is-active';
-        
+
+    if (!$megaMenu.length) return; // Ensure $megaMenu exists
+
+    // Hover actions for the main link
     $this.on('mouseenter', function (event) {
         event.preventDefault();
         $parentLi.addClass(activeClass);
@@ -468,6 +471,7 @@ $navDropdownLink.each(function () {
         dynamicMegaMenuPosition($megaMenu, $parentLi);
     });
 
+    // Hover actions for the mega menu
     $megaMenu.on('mouseenter', function (event) {
         event.preventDefault();
         $parentLi.addClass(activeClass);
@@ -478,12 +482,14 @@ $navDropdownLink.each(function () {
         $megaMenu.removeClass(activeClass);
     });
 
+    // Mouse leave for parent li
     $parentLi.on('mouseleave', function (event) {
         event.preventDefault();
         $parentLi.removeClass(activeClass);
         $megaMenu.removeClass(activeClass);
     });
 
+    // Click event to close the mega menu
     $('.megamenu a').on('click', function (e) {
         $parentLi.removeClass(activeClass);
         $megaMenu.removeClass(activeClass);
@@ -491,46 +497,40 @@ $navDropdownLink.each(function () {
 });
 
 function dynamicMegaMenuPosition($megaMenu, $parentLi) {
-    // Only run this function if the menu exists and is visible
-    if ($megaMenu.length && $megaMenu.is(':visible')) {
-        if ($('.header').length > 0) {
-            var container = $('.header .container'),
-                containerWidth = container.innerWidth(),
-                windowWidth = $(window).width(),
-                containerOffsetLeft = container.offset().left;
+    if (!$megaMenu || !$megaMenu.length || !$megaMenu.is(':visible')) return; // Avoid errors
 
-            if ($megaMenu.hasClass('has-links')) {
-                // Calculate the center alignment
-                var parentLiWidth = $parentLi.outerWidth(),
-                    megaMenuWidth = $megaMenu.outerWidth(),
-                    parentLiOffset = $parentLi.offset().left,
-                    leftPosition = parentLiOffset + (parentLiWidth / 2) - (megaMenuWidth / 2);
+    if ($('.header').length > 0) {
+        var container = $('.header .container'),
+            containerWidth = container.innerWidth(),
+            windowWidth = $(window).width(),
+            containerOffsetLeft = container.offset().left;
 
-                // Ensure the mega menu doesn't overflow the screen width
-                if (leftPosition + megaMenuWidth > windowWidth) {
-                    // If the right side overflows, adjust left position
-                    leftPosition = windowWidth - megaMenuWidth - 16; // 16px padding from the right side
-                }
+        if ($megaMenu.hasClass('has-links')) {
+            // Calculate the center alignment
+            var parentLiWidth = $parentLi.outerWidth(),
+                megaMenuWidth = $megaMenu.outerWidth(),
+                parentLiOffset = $parentLi.offset().left,
+                leftPosition = parentLiOffset + (parentLiWidth / 2) - (megaMenuWidth / 2);
 
-                if (leftPosition < 0) {
-                    // If the left side overflows, align it to the left edge of the viewport
-                    leftPosition = 16; // 16px padding from the left side
-                }
-
-                // Apply the computed position
-                $megaMenu.css({ left: leftPosition, right: 'auto' }); // Center the menu under the parent
-            } else {
-                // Default to right alignment
-                var totalOffset = windowWidth - (containerWidth + containerOffsetLeft);
-                $megaMenu.css('right', totalOffset);
+            // Ensure the mega menu doesn't overflow the screen width
+            if (leftPosition + megaMenuWidth > windowWidth) {
+                leftPosition = windowWidth - megaMenuWidth - 16;
             }
+
+            if (leftPosition < 0) {
+                leftPosition = 16;
+            }
+
+            $megaMenu.css({ left: leftPosition, right: 'auto' });
+        } else {
+            // Default to right alignment
+            var totalOffset = windowWidth - (containerWidth + containerOffsetLeft);
+            $megaMenu.css('right', totalOffset);
         }
     }
 }
 
-dynamicMegaMenuPosition()
-
-// Attach the function to resize and scroll events, but check if the menu is active
+// Handle dynamic positioning on resize and scroll
 $(window).on('resize scroll', function () {
     var $activeMegaMenu = $('.megamenu__item.is-active'),
         $activeParentLi = $('.main-navigation .has-megamenu > li.is-active');
