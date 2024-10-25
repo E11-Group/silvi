@@ -764,8 +764,71 @@ $(document).ready(function () {
 
 });
 
+// Select the wrapper and sections within it
+const wrapper = document.querySelector('.has-section-scroll');
+const sections = wrapper.querySelectorAll('.has-section-scroll > section');
+let currentSectionIndex = 0;
+let isScrolling = false;
+let isInWrapper = true; 
+function scrollToSection(index) {
+    const targetSection = sections[index];
+    const targetPosition = targetSection.offsetTop;
 
+    window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+    });
 
+    currentSectionIndex = index;
+}
+function handleWrapperScroll(event) {
+    if (isScrolling) return; 
+    const direction = event.deltaY > 0 ? 1 : -1;
+    const nextIndex = currentSectionIndex + direction;
+    if (nextIndex >= 0 && nextIndex < sections.length) {
+        isScrolling = true;
+        scrollToSection(nextIndex);
+        setTimeout(() => {
+            isScrolling = false;
+        }, 800); 
+    } else {
+        isInWrapper = false;
+    }
+}
+function onScroll(event) {
+    const wrapperEnd = wrapper.offsetTop + wrapper.offsetHeight;
+    const windowScrollTop = window.scrollY + window.innerHeight;
+    if (windowScrollTop <= wrapperEnd && !isInWrapper) {
+        isInWrapper = true;
+        currentSectionIndex = Math.floor((window.scrollY - wrapper.offsetTop) / window.innerHeight);
+        handleWrapperScroll(event);
+    } else if (isInWrapper) {
+        event.preventDefault();
+        handleWrapperScroll(event);
+    }
+}
+window.addEventListener('wheel', onScroll, { passive: false });
+
+let startY;
+window.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].clientY;
+});
+
+window.addEventListener('touchmove', (e) => {
+    const wrapperEnd = wrapper.offsetTop + wrapper.offsetHeight;
+    const windowScrollTop = window.scrollY + window.innerHeight;
+    if (windowScrollTop <= wrapperEnd && isInWrapper) {
+        e.preventDefault(); 
+
+        if (isScrolling) return;
+
+        const deltaY = startY - e.touches[0].clientY;
+        if (Math.abs(deltaY) > 50) {
+            handleWrapperScroll({ deltaY });
+            startY = e.touches[0].clientY;
+        }
+    }
+});
 
 $(function () {
 

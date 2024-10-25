@@ -224,6 +224,23 @@
             ]
         },
         {
+            "key": "field_671b7d8fb170b",
+            "label": "Button",
+            "name": "mwi_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_6714ff30d46c7",
             "label": "Settings",
             "name": "",
@@ -281,5 +298,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729432824
+    "modified": 1729854889
 }
