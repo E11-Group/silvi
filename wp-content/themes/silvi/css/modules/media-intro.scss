@@ -65,6 +65,21 @@
   .media-intro__data-item {
     margin-bottom: 20px;
     border-right: 1px solid $white;
+    &:nth-child(4) {
+      border-right: 0px;
+      @media #{$phone-portrait} {
+        border-right: 1px solid $white;
+      }
+    }
+    &:nth-child(even) {
+      @media #{$phone-portrait} {
+        border-right: 0;
+      }
+    }
+  }
+
+  .media-intro__title {
+    color: $hite;
   }
 }
 
