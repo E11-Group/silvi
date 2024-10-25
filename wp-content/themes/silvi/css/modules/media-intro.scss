@@ -15,14 +15,61 @@
     padding: 0;
     display: block;
   }
-  &.right-alignment {
-    .media-intro__inner {
-      align-content: flex-end;
+  // &.right-alignment {
+  //   .media-intro__inner {
+  //     align-content: flex-end;
+  //   }
+  // }
+  &:hover,
+  &:focus {
+    .media-intro__wrap-popup {
+      opacity: 1;
+      visibility: visible;
+      @media #{$phone} {
+        opacity: 0;
+        visibility: hidden;
+      }
     }
   }
 }
 
+.media-intro__wrap--mobile {
+  display: none;
+  @media #{$phone} {
+    &.media-intro__wrap {
+      display: block;
+    }
+  }
+}
+
+.media-intro__wrap-popup {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  max-width: 676px;
+  width: 100%;
+  padding: 40px 30px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+
+  .media-intro__description {
+    color: $white;
+    font-size: 24px;
+    text-align: center;
+  }
+  .media-intro__menu-title {
+    color: $white;
+  }
+  .media-intro__data-item {
+    margin-bottom: 20px;
+    border-right: 1px solid $white;
+  }
+}
+
 .media-intro__wrap {
+  display: none;
   max-width: 458px;
   width: 100%;
   background-color: $primary-color;
@@ -57,8 +104,8 @@
   font-weight: 500;
   line-height: 1.17;
   margin-bottom: 14px;
-  a{
-    &:hover{
+  a {
+    &:hover {
       text-decoration: none;
       color: $black-100;
     }
@@ -159,6 +206,7 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 12px;
   row-gap: 21px;
+  margin-bottom: 20px;
   @media #{$phone} {
     row-gap: 10px;
   }
@@ -175,5 +223,37 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: flex-start;
+  // align-content: flex-start;
+}
+
+.has-section-scroll > section {
+  height: 100vh;
+  transition: transform 0.6s ease-in-out;
+  @media #{$phone} {
+    height: 100%;
+  }
+}
+
+.media-intro {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111e27;
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    &:before {
+      opacity: 0.65;
+      @media #{$phone} {
+        opacity: 0;
+      }
+    }
+  }
 }

@@ -19,6 +19,7 @@ function e11_media_with_intro($args = array(), $use_page_content = false, $get_f
         $defaults = array(
             'title'        => $get_field_type($prefix . 'mwi_title', $field_location),
             'content'        => $get_field_type($prefix . 'mwi_content', $field_location),
+            'button'        => $get_field_type($prefix . 'mwi_button', $field_location),
             'alignment'        => $get_field_type($prefix . 'mwi_choose_alignment', $field_location),
             'image'        => $get_field_type($prefix . 'mwi_image', $field_location),
             'background_video'        => $get_field_type($prefix . 'mwi_background_video', $field_location),
@@ -30,6 +31,7 @@ function e11_media_with_intro($args = array(), $use_page_content = false, $get_f
             'title'     => false,
             'content'     => false,
             'alignment'     => false,
+            'button'     => false,
             'background_video'     => false,
             'image'     => array(),
             'datas'        => array(),
