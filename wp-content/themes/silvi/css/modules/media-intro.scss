@@ -53,11 +53,16 @@
   transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
-
+  @media #{$phone-portrait} {
+    display: none;
+  }
   .media-intro__description {
     color: $white;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
+    a {
+      color: $white;
+    }
   }
   .media-intro__menu-title {
     color: $white;
@@ -245,7 +250,7 @@
   height: 100vh;
   transition: transform 0.6s ease-in-out;
   @media #{$phone-portrait} {
-    height: 100%;
+    height: auto;
   }
 }
 
@@ -262,6 +267,9 @@
     opacity: 0;
     z-index: 2;
     transition: all 0.3s ease;
+    @media #{$phone-portrait} {
+      display: none;
+    }
   }
   &:hover {
     &:before {

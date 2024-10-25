@@ -605,6 +605,10 @@ const sections = wrapper.querySelectorAll('.has-section-scroll > section');
 let currentSectionIndex = 0;
 let isScrolling = false;
 let isInWrapper = true; 
+function isFeatureEnabled() {
+    return window.innerWidth >= 561;
+}
+
 function scrollToSection(index) {
     const targetSection = sections[index];
     const targetPosition = targetSection.offsetTop;
@@ -616,8 +620,9 @@ function scrollToSection(index) {
 
     currentSectionIndex = index;
 }
+
 function handleWrapperScroll(event) {
-    if (isScrolling) return; 
+    if (isScrolling || !isFeatureEnabled()) return; 
     const direction = event.deltaY > 0 ? 1 : -1;
     const nextIndex = currentSectionIndex + direction;
     if (nextIndex >= 0 && nextIndex < sections.length) {
@@ -630,7 +635,10 @@ function handleWrapperScroll(event) {
         isInWrapper = false;
     }
 }
+
 function onScroll(event) {
+    if (!isFeatureEnabled()) return; // Check screen width
+
     const wrapperEnd = wrapper.offsetTop + wrapper.offsetHeight;
     const windowScrollTop = window.scrollY + window.innerHeight;
     if (windowScrollTop <= wrapperEnd && !isInWrapper) {
@@ -642,21 +650,24 @@ function onScroll(event) {
         handleWrapperScroll(event);
     }
 }
-window.addEventListener('wheel', onScroll, { passive: false });
-
+window.addEventListener('wheel', (event) => {
+    if (isFeatureEnabled()) {
+        onScroll(event);
+    }
+}, { passive: false });
 let startY;
 window.addEventListener('touchstart', (e) => {
+    if (!isFeatureEnabled()) return;
     startY = e.touches[0].clientY;
 });
-
 window.addEventListener('touchmove', (e) => {
+    if (!isFeatureEnabled()) return;
+
     const wrapperEnd = wrapper.offsetTop + wrapper.offsetHeight;
     const windowScrollTop = window.scrollY + window.innerHeight;
     if (windowScrollTop <= wrapperEnd && isInWrapper) {
         e.preventDefault(); 
-
         if (isScrolling) return;
-
         const deltaY = startY - e.touches[0].clientY;
         if (Math.abs(deltaY) > 50) {
             handleWrapperScroll({ deltaY });
