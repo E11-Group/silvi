@@ -1,5 +1,5 @@
 <?php
-if (!empty($data['module_id'])) {
+if ( ! empty( $data['module_id'] ) ) {
 	$block_id = $data['module_id'];
 } else {
 	$block_id = 'block-' . uniqid();
@@ -7,100 +7,101 @@ if (!empty($data['module_id'])) {
 
 $addClass = '';
 
-$latitude = 40.13082155313381;
-$longitude = -74.82232955794834;
-$map_height = 700;
-$map_zoom = 8;
-$map_type = 'ROADMAP';
-$map_scroll = 'true';
+$latitude        = 40.13082155313381;
+$longitude       = - 74.82232955794834;
+$map_height      = 700;
+$map_zoom        = 8;
+$map_type        = 'ROADMAP';
+$map_scroll      = 'true';
 $map_control_inv = 'true';
+$init_lat        = 40.13082155313381;
+$init_long       = -74.82232955794834;
 
-$mapdataall = [];
+$map_data = [];
 
-if(!empty($data['location_item'])) {
-	$long = [];
-	$lat = [];
+if ( ! empty( $data['location_item'] ) ) {
+	$long    = [];
+	$lat     = [];
 	$counter = 1;
-	foreach ($data['location_item'] as $item) {
-		$name = $item['location_name'];
-		$address = $item['street_address'];
-		$city = $item['city'];
-		$state = $item['location_state'];
-		$zip = $item['zip_code'];
-		$phone = $item['phone_number'];
+	foreach ( $data['location_item'] as $item ) {
+		$name      = $item['location_name'];
+		$address   = $item['street_address'];
+		$city      = $item['city'];
+		$state     = $item['location_state'];
+		$zip       = $item['zip_code'];
+		$phone     = $item['phone_number'];
 		$longitude = $item['longtitude'];
-		$latitude = $item['latitude'];
+		$latitude  = $item['latitude'];
 
-		if (!empty($longitude) && !empty($latitude)) {
-			$longdeg = $longitude['degree'];
-			$longdir = $longitude['direction'];
-			$latdeg = $latitude['degree'];
-			$latdir = $latitude['direction'];
+		if ( ! empty( $longitude ) && ! empty( $latitude ) ) {
+			$long_deg = $longitude['degree'];
+			$lat_deg  = $latitude['degree'];
 
-			if ($longdir == 'W') {
-				$longdeg = -1 * floatval($longdeg);
+			if ( $counter === 1 ) {
+				$init_lat  = (double) $lat_deg;
+				$init_long = (double) $long_deg;
 			}
 
-			if ($latdir == 'N') {
-				$latdeg = -1 * floatval($latdeg);
-			}
-
-			$mapdataall[] = [
-				'longitude' => $longdeg,
-				'latitude' => $latdeg,
-				'id' => $counter,
-				'details' => "{$address} {$city}, {$state} {$zip} {$phone}",
-				'name' => $name
+			$map_data[] = [
+				'longitude' => (double) $long_deg,
+				'latitude'  => (double) $lat_deg,
+				'id'        => $counter,
+				'details'   => "{$address} {$city}, {$state} {$zip} {$phone}",
+				'name'      => $name
 			];
-			$counter++;
+			$counter ++;
 		}
 	}
 }
 
 
 ?>
-<section class="media-content media-content--locations" id="<?php echo esc_attr($block_id); ?>" data-animate>
+<section class="media-content media-content--locations" id="<?php echo esc_attr( $block_id ); ?>" data-animate>
     <div id="map"></div>
-  <!--  <figure class="media-content__bg-image <?php /*echo $addClass; */?>">
-			<img src="<?php /*echo esc_url($data['image']['url']); */?>" alt="<?php /*echo esc_attr($data['image']['alt']); */?>">
+    <!--  <figure class="media-content__bg-image <?php /*echo $addClass; */ ?>">
+			<img src="<?php /*echo esc_url($data['image']['url']); */ ?>" alt="<?php /*echo esc_attr($data['image']['alt']); */ ?>">
 		</figure>-->
 
-	<?php if (!empty($data['title']) || !empty($data['buttons']) || !empty($data['content'])): ?>
-		<div class="container">
-			<div class="media-content__wrap">
-				<?php if (!empty($data['title'])): ?>
-					<h2 class="media-content__title"><?php echo $data['title']; ?></h2>
+	<?php if ( ! empty( $data['title'] ) || ! empty( $data['buttons'] ) || ! empty( $data['content'] ) ): ?>
+        <div class="container">
+            <div class="media-content__wrap">
+				<?php if ( ! empty( $data['title'] ) ): ?>
+                    <h2 class="media-content__title"><?php echo $data['title']; ?></h2>
 				<?php endif; ?>
-				<?php if (!empty($data['content'])): ?>
-					<div class="media-content__description entry-content"><?php echo $data['content']; ?></div>
+				<?php if ( ! empty( $data['content'] ) ): ?>
+                    <div class="media-content__description entry-content"><?php echo $data['content']; ?></div>
 				<?php endif; ?>
-				<?php if (!empty($data['buttons'])): ?>
-					<div class="media-content__secondary">
-						<?php foreach ($data['buttons'] as $item):
+				<?php if ( ! empty( $data['buttons'] ) ): ?>
+                    <div class="media-content__secondary">
+						<?php foreach ( $data['buttons'] as $item ):
 							?>
-							<a class="btn" href="<?php echo $item['link']['url']; ?>"
-							   target="<?php echo $item['link']['target']; ?>">
-								<?php echo $item['link']['title']; ?> <svg class="icon icon-silviRightArrow">
-									<use xlink:href="#icon-silviRightArrow"></use>
-								</svg>
-							</a>
+                            <a class="btn" href="<?php echo $item['link']['url']; ?>"
+                               target="<?php echo $item['link']['target']; ?>">
+								<?php echo $item['link']['title']; ?>
+                                <svg class="icon icon-silviRightArrow">
+                                    <use xlink:href="#icon-silviRightArrow"></use>
+                                </svg>
+                            </a>
 						<?php
 						endforeach; ?>
-					</div>
+                    </div>
 				<?php endif; ?>
-			</div>
-		</div>
+            </div>
+        </div>
 	<?php endif; ?>
 </section>
 
 
 <script>
-    var mapDataAll = <?php echo json_encode($mapdataall); ?>;
+    let mapDataAll, initLat, initLong, map;
+    function initMap() {
+        mapDataAll = <?php echo wp_json_encode( $map_data ); ?>;
+        initLat = <?php echo $init_lat; ?>;
+        initLong = <?php echo $init_long; ?>;
 
-    function initialize() {
-        var mapOptions = {
+        const mapOptions = {
             zoom: <?php echo $map_zoom; ?>,
-            center: new google.maps.LatLng(40.13082155313381, -74.82232955794834), // this is for center
+            center: {lat: initLat, lng: initLong},
             mapTypeId: google.maps.MapTypeId.<?php echo $map_type; ?>,
             scrollwheel: <?php echo $map_scroll ?>,
             zoomControl: <?php echo $map_control_inv ?>,
@@ -190,13 +191,13 @@ if(!empty($data['location_item'])) {
         };
 
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var infowindow = new google.maps.InfoWindow();
+        const infoWindow = new google.maps.InfoWindow();
 
         // Loop through map data and create markers
-        mapDataAll.forEach(function(location) {
+        mapDataAll.forEach(function (location) {
             if (location.longitude && location.latitude) {
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(location.latitude, location.longitude),
+                const marker = new google.maps.Marker({
+                    position: {lat: location.latitude, lng: location.longitude},
                     map: map,
                     icon: {
                         url: '<?php echo get_template_directory_uri(); ?>/images/pin.png',
@@ -205,15 +206,15 @@ if(!empty($data['location_item'])) {
                     labelClass: "gmap-label"
                 });
 
-                google.maps.event.addListener(marker, 'click', function() {
-                    var locationContent = `<h3 class="map-results__location-title-on-map">${location.name}</h3>${location.details}`;
-                    infowindow.setContent(locationContent);
-                    infowindow.open(map, marker);
+                google.maps.event.addListener(marker, 'click', function () {
+                    const locationContent = `<h3 class="map-results__location-title-on-map">${location.name}</h3>${location.details}`;
+                    infoWindow.setContent(locationContent);
+                    infoWindow.open(map, marker);
                 });
             }
         });
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+    window.initMap = initMap;
 
 </script>
