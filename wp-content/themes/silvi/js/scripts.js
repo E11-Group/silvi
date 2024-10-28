@@ -769,7 +769,7 @@ const wrapper = document.querySelector('.has-section-scroll');
 const sections = wrapper.querySelectorAll('.has-section-scroll > section');
 let currentSectionIndex = 0;
 let isScrolling = false;
-let isInWrapper = true; 
+let isInWrapper = true;
 function isFeatureEnabled() {
     return window.innerWidth >= 561;
 }
@@ -784,10 +784,11 @@ function scrollToSection(index) {
     });
 
     currentSectionIndex = index;
+    console.log(currentSectionIndex);
 }
 
 function handleWrapperScroll(event) {
-    if (isScrolling || !isFeatureEnabled()) return; 
+    if (isScrolling || !isFeatureEnabled()) return;
     const direction = event.deltaY > 0 ? 1 : -1;
     const nextIndex = currentSectionIndex + direction;
     if (nextIndex >= 0 && nextIndex < sections.length) {
@@ -795,7 +796,7 @@ function handleWrapperScroll(event) {
         scrollToSection(nextIndex);
         setTimeout(() => {
             isScrolling = false;
-        }, 800); 
+        }, 1500);
     } else {
         isInWrapper = false;
     }
@@ -831,7 +832,7 @@ window.addEventListener('touchmove', (e) => {
     const wrapperEnd = wrapper.offsetTop + wrapper.offsetHeight;
     const windowScrollTop = window.scrollY + window.innerHeight;
     if (windowScrollTop <= wrapperEnd && isInWrapper) {
-        e.preventDefault(); 
+        e.preventDefault();
         if (isScrolling) return;
         const deltaY = startY - e.touches[0].clientY;
         if (Math.abs(deltaY) > 50) {
