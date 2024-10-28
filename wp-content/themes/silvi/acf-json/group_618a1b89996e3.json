@@ -912,6 +912,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_671f104c5c756": {
+                    "key": "layout_671f104c5c756",
+                    "name": "media_content_locations_map",
+                    "label": "Media Content Locations Map",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_671f104c5c758",
+                            "label": "Media Content Locations Map",
+                            "name": "media_content_locations_map",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_671f0c3b46524"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -939,5 +971,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729578616
+    "modified": 1730089058
 }
