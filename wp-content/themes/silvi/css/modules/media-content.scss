@@ -150,6 +150,7 @@
     height: 100%;
     @media #{$phone-portrait} {
       position: relative;
+      min-height: 400px;
     }
     iframe{
       display: block;
