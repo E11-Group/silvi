@@ -7,15 +7,15 @@ if (!empty($data['module_id'])) {
 
 $addClass = '';
 
-$latitude = 40.13082155313381; // this is for marker
-$longitude = -74.82232955794834; // this is  for market
+$latitude = 40.13082155313381;
+$longitude = -74.82232955794834;
 $map_height = 700;
 $map_zoom = 8;
 $map_type = 'ROADMAP';
 $map_scroll = 'true';
 $map_control_inv = 'true';
 
-$mapdataall = []; // Populate this array as per your logic
+$mapdataall = [];
 
 if(!empty($data['location_item'])) {
 	$long = [];
@@ -93,12 +93,7 @@ if(!empty($data['location_item'])) {
 	<?php endif; ?>
 </section>
 
-<style>
-    #map {
-        width: 100%;
 
-    }
-</style>
 <script>
     var mapDataAll = <?php echo json_encode($mapdataall); ?>;
 
