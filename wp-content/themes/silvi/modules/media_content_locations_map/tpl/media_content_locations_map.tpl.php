@@ -56,14 +56,14 @@ if ( ! empty( $data['location_item'] ) ) {
 
 
 ?>
-<section class="media-content media-content--locations" id="<?php echo esc_attr( $block_id ); ?>" data-animate>
+<section class="media-content media-intro media-content--locations" id="<?php echo esc_attr( $block_id ); ?>" data-animate>
     <div id="map"></div>
     <!--  <figure class="media-content__bg-image <?php /*echo $addClass; */ ?>">
 			<img src="<?php /*echo esc_url($data['image']['url']); */ ?>" alt="<?php /*echo esc_attr($data['image']['alt']); */ ?>">
 		</figure>-->
 
 	<?php if ( ! empty( $data['title'] ) || ! empty( $data['buttons'] ) || ! empty( $data['content'] ) ): ?>
-        <div class="container">
+        <div class="media-intro__inner container">
             <div class="media-content__wrap">
 				<?php if ( ! empty( $data['title'] ) ): ?>
                     <h2 class="media-content__title"><?php echo $data['title']; ?></h2>
@@ -108,6 +108,7 @@ if ( ! empty( $data['location_item'] ) ) {
             zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.SMALL
             },
+            gestureHandling: "cooperative",
             styles: [
                 {elementType: "geometry", stylers: [{color: "#F2F2F2"}]},
                 {elementType: "labels.text.stroke", stylers: [{color: "#F2F2F2"}]},

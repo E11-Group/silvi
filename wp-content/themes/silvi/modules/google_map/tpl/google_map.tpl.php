@@ -177,7 +177,6 @@ wp_reset_postdata(); ?>
             zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.SMALL
             },
-            gestureHandling: "cooperative",
             styles: [
                 {elementType: "geometry", stylers: [{color: "#F2F2F2"}]},
                 {elementType: "labels.text.stroke", stylers: [{color: "#F2F2F2"}]},
@@ -349,7 +348,6 @@ wp_reset_postdata(); ?>
                 zoomControlOptions: {
                     style: google.maps.ZoomControlStyle.SMALL
                 },
-                gestureHandling: "cooperative",
                 styles: [
                     {elementType: "geometry", stylers: [{color: "#F2F2F2"}]},
                     {elementType: "labels.text.stroke", stylers: [{color: "#F2F2F2"}]},
@@ -510,7 +508,6 @@ wp_reset_postdata(); ?>
                 zoomControlOptions: {
                     style: google.maps.ZoomControlStyle.SMALL
                 },
-                gestureHandling: "cooperative",
                 styles: [
                     {elementType: "geometry", stylers: [{color: "#F2F2F2"}]},
                     {elementType: "labels.text.stroke", stylers: [{color: "#F2F2F2"}]},
