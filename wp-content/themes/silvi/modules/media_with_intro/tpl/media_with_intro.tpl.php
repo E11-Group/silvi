@@ -32,7 +32,7 @@ if (!empty($data['background_video'])) {
                 </video>
             </div>
         <?php endif; ?>
-        <div class="media-intro__wrap media-intro__wrap--mobile">
+        <div class="media-intro__wrap">
             <?php if (!empty($data['title'])): ?>
                 <h2 class="media-intro__title"><?php echo $data['title']; ?></h2>
             <?php endif; ?>
@@ -55,45 +55,7 @@ if (!empty($data['background_video'])) {
                     endforeach; ?>
                 </div>
             <?php endif; ?>
-            <?php if (!empty($data['button'])): ?>
-                <a class="btn btn--dark" href="<?php echo $data['button']['url']; ?>"
-                    target="<?php echo $data['button']['target']; ?>">
-                    <?php echo $data['button']['title']; ?>
-                </a>
-            <?php endif; ?>
         </div>
-        <?php if (!empty($data['title']) || !empty($data['content']) || !empty($data['datas']) || !empty($data['button'])): ?>
-            <div class="media-intro__wrap-popup">
-                <?php if (!empty($data['title'])): ?>
-                    <h2 class="media-intro__title"><?php echo $data['title']; ?></h2>
-                <?php endif; ?>
-                <?php if (!empty($data['content'])): ?>
-                    <div class="media-intro__description entry-content"><?php echo $data['content']; ?></div>
-                <?php endif; ?>
-                <?php if (!empty($data['datas'])): ?>
-                    <div class="media-intro__secondary">
-                        <?php foreach ($data['datas'] as $item):
-                            if (!empty($item['item_title']) || $item['value']):
-                                ?>
-                                <div class="media-intro__data-item">
-                                    <p class="media-intro__menu-title">
-                                        <strong><?php echo $item['value']; ?></strong> <br>
-                                        <?php echo $item['item_title']; ?>
-                                    </p>
-                                </div>
-                                <?php
-                            endif;
-                        endforeach; ?>
-                    </div>
-                <?php endif; ?>
-                <?php if (!empty($data['button'])): ?>
-                    <a class="btn" href="<?php echo $data['button']['url']; ?>"
-                        target="<?php echo $data['button']['target']; ?>">
-                        <?php echo $data['button']['title']; ?>
-                    </a>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
     </div>
 </section>
 <!-- .hero ends -->
