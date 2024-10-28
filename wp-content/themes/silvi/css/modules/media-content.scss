@@ -136,3 +136,24 @@
     }
   }
 }
+
+.media-content--locations{
+  .media-content__wrap{
+    position: relative;
+    z-index: 2;
+  }
+  #map{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    @media #{$phone-portrait} {
+      position: relative;
+      min-height: 400px;
+    }
+    iframe{
+      display: block;
+    }
+  }
+}

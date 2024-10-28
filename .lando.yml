@@ -1,0 +1,13 @@
+name: silvi
+recipe: wordpress
+config:
+  php: "8.2"  # Change to your desired PHP version
+services:
+  database:
+    type: mysql:8.0
+    overrides:
+      platform: linux/amd64
+  pma:
+    type: phpmyadmin
+    overrides:
+      platform: linux/amd64
