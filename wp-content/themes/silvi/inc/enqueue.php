@@ -22,10 +22,10 @@ function e11_scripts() {
 		wp_enqueue_style( 'fancybox-css', STYLEDIR . '/css/libs/fancybox.css', false, '1.0' );
 
 		// Main Stylsheet
-		wp_enqueue_style( 'css', STYLEDIR . '/style.css', false, '1.0.3' );
+		wp_enqueue_style( 'css', STYLEDIR . '/style.css', false, '1.0.4' );
 
 		// Main Scripts (this file is concatenated from the files inside of js/development/ )
-		wp_enqueue_script( 'scripts', JSDIR . '/scripts.min.js', array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_script( 'scripts', JSDIR . '/scripts.min.js', array( 'jquery' ), '1.0.1', true );
 		wp_localize_script( 'scripts', 'localized', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			'siteurl' => site_url()
