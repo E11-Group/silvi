@@ -766,7 +766,10 @@ $(document).ready(function () {
 
 // Select the wrapper and sections within it
 const wrapper = document.querySelector('.has-section-scroll');
-const sections = wrapper.querySelectorAll('.has-section-scroll > section');
+if (wrapper) {
+    const sections = wrapper.querySelectorAll('.has-section-scroll > section');
+}
+
 let currentSectionIndex = 0;
 let isScrolling = false;
 let isInWrapper = true;
@@ -784,7 +787,6 @@ function scrollToSection(index) {
     });
 
     currentSectionIndex = index;
-    console.log(currentSectionIndex);
 }
 
 function handleWrapperScroll(event) {
