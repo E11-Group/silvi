@@ -1,9 +1,9 @@
 .has-section-scroll>section {
   height: 100vh;
 
-  // &:nth-child(1) {
-  //   height: 100vh;
-  // }
+  @media #{$phone-portrait} {
+    height: auto;
+  }
 }
 
 .media-intro {
@@ -140,7 +140,7 @@
   font-family: $primary-family;
   font-size: 10px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.17;
   text-align: center;
 

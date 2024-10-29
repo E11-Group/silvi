@@ -12,7 +12,7 @@ $longitude       = - 74.82232955794834;
 $map_height      = 700;
 $map_zoom        = 8;
 $map_type        = 'ROADMAP';
-$map_scroll      = 'true';
+$map_scroll      = 'false';
 $map_control_inv = 'true';
 $init_lat        = 40.13082155313381;
 $init_long       = -74.82232955794834;
@@ -108,7 +108,6 @@ if ( ! empty( $data['location_item'] ) ) {
             zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.SMALL
             },
-            gestureHandling: "cooperative",
             styles: [
                 {elementType: "geometry", stylers: [{color: "#F2F2F2"}]},
                 {elementType: "labels.text.stroke", stylers: [{color: "#F2F2F2"}]},
