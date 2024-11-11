@@ -20,6 +20,7 @@ $alt-family: 'Teko', sans-serif;
 // Media Queries
 $retina-width: 1600px;
 $laptop-width: 1439px;
+$nav-width: 1300px;
 $small-width: 1200px;
 $tablet-width: 1024px;
 $phone-width: 767px;
@@ -30,6 +31,7 @@ $header-width: 960px;
 $desktop: 'screen and (max-width: #{$container})';
 $retina-screen: 'screen and (max-width: #{$retina-width})';
 $laptop-screen: 'screen and (max-width: #{$laptop-width})';
+$nav-screen: 'screen and (max-width: #{$nav-width})';
 $small-screen: 'screen and (max-width: #{$small-width})';
 $tablet: 'screen and (max-width: #{$tablet-width})';
 $phone: 'screen and (max-width: #{$phone-width})';
