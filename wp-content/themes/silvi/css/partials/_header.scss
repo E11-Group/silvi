@@ -11,7 +11,7 @@
         transition: ease all 0.3s;
     }
 
-    @media #{$tablet} {
+    @media #{$nav-screen} {
         background-color: $black;
         box-shadow: 0 4px 8px rgba($black-alt, 0.5)
     }
@@ -20,7 +20,7 @@
         padding: 35px 0 21px;
         display: flex;
         justify-content: space-between;
-        @media #{$tablet} {
+        @media #{$nav-screen} {
             align-items: center;
             padding: 16px 0;
         }
@@ -44,7 +44,7 @@
 .no-hero-module {
     padding-top: 146px;
 
-    @media #{$tablet} {
+    @media #{$nav-screen} {
         padding-top: 122px;
     }
 
@@ -61,7 +61,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    @media #{$tablet} {
+    @media #{$nav-screen} {
         display: none;
     }
 }
@@ -103,7 +103,7 @@
     justify-content: space-between;
     align-items: flex-end;
 
-    @media #{$tablet} {
+    @media #{$nav-screen} {
         align-items: center;
     }
 }
@@ -125,7 +125,7 @@
     flex-wrap: wrap;
     margin: 0 0 0 10px;
 
-    @media #{$tablet} {
+    @media #{$nav-screen} {
         padding: 20px 0;
     }
 
@@ -147,7 +147,7 @@
             padding: 0 10px;
         }
 
-        @media #{$tablet} {
+        @media #{$nav-screen} {
             width: 100%;
             padding: 0;
         }
@@ -236,7 +236,7 @@
             position: relative;
             z-index: 10;
 
-            @media #{$tablet} {
+            @media #{$nav-screen} {
                 display: block;
                 padding: 15px 20px;
             }
@@ -280,7 +280,7 @@
         top: calc(100% + 16px);
     }
 
-    @media #{$tablet} {
+    @media #{$nav-screen} {
         display: none;
         position: static;
         top: 0;
@@ -304,7 +304,7 @@
         position: absolute;
         background-color: transparent;
 
-        @media #{$tablet} {
+        @media #{$nav-screen} {
             display: none;
         }
     }
@@ -330,7 +330,7 @@
             text-transform: uppercase;
             padding: 11px 20px;
 
-            @media #{$tablet} {
+            @media #{$nav-screen} {
                 display: block;
                 @include fsz(28px);
             }
@@ -369,13 +369,13 @@
     position: relative;
     z-index: 1;
 
-    @media #{$tablet} {
+    @media #{$nav-screen} {
         padding-right: 30px;
     }
 
     > .sub-menu {
         &.is-active {
-            @media #{$tablet} {
+            @media #{$nav-screen} {
                 display: block;
             }
         }
@@ -390,7 +390,7 @@
 
     .header {
         &.nav__visible {
-            @media #{$tablet} {
+            @media #{$nav-screen} {
                 position: absolute;
                 top: 0;
                 bottom: 0;
@@ -420,7 +420,7 @@
     display: none;
 
     .nav__visible & {
-        @media #{$tablet} {
+        @media #{$nav-screen} {
             display: block;
             opacity: 1;
             pointer-events: all;
@@ -459,7 +459,7 @@
         transform: rotate(-180deg);
     }
 
-    @media screen and(min-width: 1023px) {
+    @media screen and(min-width: 1270px) {
         display: none;
     }
 
@@ -613,7 +613,7 @@
 
 .megamenu {
     position: relative;
-    @media #{$tablet} {
+    @media #{$nav-screen} {
         display: none;
     }
 }
