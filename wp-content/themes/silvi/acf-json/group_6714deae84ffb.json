@@ -70,6 +70,23 @@
             "allow_in_bindings": 1
         },
         {
+            "key": "field_67343a0071dbb",
+            "label": "Vimeo Video URL",
+            "name": "mhwi_vimeo_video_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "If video URL is added, this video is displayed instead of MP4 video",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_6714deae92211",
             "label": "Icons",
             "name": "mhwi_icons",
@@ -198,5 +215,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729525024
+    "modified": 1731476022
 }

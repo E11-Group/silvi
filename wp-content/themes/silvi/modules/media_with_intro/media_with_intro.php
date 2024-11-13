@@ -23,6 +23,7 @@ function e11_media_with_intro($args = array(), $use_page_content = false, $get_f
             'alignment'        => $get_field_type($prefix . 'mwi_choose_alignment', $field_location),
             'image'        => $get_field_type($prefix . 'mwi_image', $field_location),
             'background_video'        => $get_field_type($prefix . 'mwi_background_video', $field_location),
+            'vimeo_video_url'        => $get_field_type($prefix . 'mwi_vimeo_video_url', $field_location),
             'datas'        => $get_field_type($prefix . 'mwi_data_list', $field_location),
             'module_id'     => $get_field_type( $prefix . 'mwi_module_id', $field_location),
         );
@@ -33,6 +34,7 @@ function e11_media_with_intro($args = array(), $use_page_content = false, $get_f
             'alignment'     => false,
             'button'     => false,
             'background_video'     => false,
+            'vimeo_video_url'     => false,
             'image'     => array(),
             'datas'        => array(),
             'module_id'     => false,

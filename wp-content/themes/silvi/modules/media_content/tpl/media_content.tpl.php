@@ -6,7 +6,7 @@ if (!empty($data['module_id'])) {
 }
 
 $addClass = '';
-if (!empty($data['background_video'])) {
+if (!empty($data['background_video']) || !empty($data['vimeo_video_url'])) {
     $addClass = 'has-video';
 }
 
@@ -18,12 +18,18 @@ if (!empty($data['background_video'])) {
         </figure>
     <?php endif; ?>
 
-    <?php if (!empty($data['background_video'])): ?>
+    <?php if (!empty($data['background_video']) || !empty($data['vimeo_video_url'])): ?>
         <div class="media-content__video-container">
-            <video aria-hidden="true" class="media-content__video video" playsinline autoplay muted loop
-                poster="<?php echo esc_url($data['image']['url']); ?>">
-                <source src="<?php echo esc_url($data['background_video']['url']); ?>" type="video/mp4">
-            </video>
+	        <?php if(!empty($data['vimeo_video_url'])) {
+		        $video_id = get_vimeo_id($data['vimeo_video_url']);
+		        ?>
+                <iframe src="https://player.vimeo.com/video/<?php echo $video_id; ?>?background=1&autoplay=1&muted=1&loop=1&byline=0&title=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+	        <?php } else { ?>
+                <video aria-hidden="true" class="media-content__video video" playsinline autoplay muted loop
+                       poster="<?php echo esc_url($data['image']['url']); ?>">
+                    <source src="<?php echo esc_url($data['background_video']['url']); ?>" type="video/mp4">
+                </video>
+	        <?php } ?>
         </div>
     <?php endif; ?>
     <?php if (!empty($data['title']) || !empty($data['buttons']) || !empty($data['content'])): ?>

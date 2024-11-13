@@ -21,6 +21,7 @@ function e11_media_content($args = array(), $use_page_content = false, $get_fiel
             'content'        => $get_field_type($prefix . 'mmc_content', $field_location),
             'image'        => $get_field_type($prefix . 'mmc_image', $field_location),
             'background_video'        => $get_field_type($prefix . 'mmc_background_video', $field_location),
+            'vimeo_video_url'        => $get_field_type($prefix . 'mmc_vimeo_video_url', $field_location),
             'buttons'        => $get_field_type($prefix . 'mmc_button_list', $field_location),
             'module_id'     => $get_field_type( $prefix . 'mmc_module_id', $field_location),
         );
@@ -29,6 +30,7 @@ function e11_media_content($args = array(), $use_page_content = false, $get_fiel
             'title'     => false,
             'content'     => false,
             'background_video'     => false,
+            'vimeo_video_url'     => false,
             'image'     => array(),
             'buttons'        => array(),
             'module_id'     => false,
