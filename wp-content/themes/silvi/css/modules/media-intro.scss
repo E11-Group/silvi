@@ -1,6 +1,6 @@
 .has-section-scroll>section {
   height: 100vh;
-
+  overflow: hidden;
   @media #{$phone-portrait} {
     height: auto;
   }
