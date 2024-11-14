@@ -118,6 +118,23 @@
             "allow_in_bindings": 1
         },
         {
+            "key": "field_67343e657d48c",
+            "label": "Vimeo Video URL",
+            "name": "mwi_vimeo_video_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "If video URL is added, then this video is displayed instead of uploaded MP4 video",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_6714ff30d46be",
             "label": "Data List",
             "name": "mwi_data_list",
@@ -298,5 +315,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729854889
+    "modified": 1731477198
 }

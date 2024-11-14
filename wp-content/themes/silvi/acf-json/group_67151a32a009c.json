@@ -92,6 +92,23 @@
             "allow_in_bindings": 1
         },
         {
+            "key": "field_67343ff64dbe5",
+            "label": "Vimeo Video URL",
+            "name": "mmc_vimeo_video_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "If video URL is added, then this video is displayed instead of uploaded MP4 video",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_67151a32abc24",
             "label": "Button List",
             "name": "mmc_button_list",
@@ -191,5 +208,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729525201
+    "modified": 1731477593
 }

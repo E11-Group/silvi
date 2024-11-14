@@ -20,6 +20,7 @@ function e11_hero_with_icons($args = array(), $use_page_content = false, $get_fi
             'title'        => $get_field_type($prefix . 'mhwi_title', $field_location),
             'image'        => $get_field_type($prefix . 'mhwi_image', $field_location),
             'background_video'        => $get_field_type($prefix . 'mhwi_background_video', $field_location),
+            'vimeo_video_url'        => $get_field_type($prefix . 'mhwi_vimeo_video_url', $field_location),
             'icons'        => $get_field_type($prefix . 'mhwi_icons', $field_location),
             'module_id'     => $get_field_type( $prefix . 'mhwi_module_id', $field_location),
         );
@@ -27,6 +28,7 @@ function e11_hero_with_icons($args = array(), $use_page_content = false, $get_fi
         $defaults = array(
             'title'     => false,
             'background_video'     => false,
+            'vimeo_video_url'     => false,
             'image'     => array(),
             'icons'        => array(),
             'module_id'     => false,
