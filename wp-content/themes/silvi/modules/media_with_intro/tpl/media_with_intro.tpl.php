@@ -32,7 +32,7 @@ if($data['disable_video_on_mobile'] == '1') {
 	            <?php if(!empty($data['vimeo_video_url'])) {
 		            $video_id = get_vimeo_id($data['vimeo_video_url']);
 		            ?>
-                    <iframe class="vimeo-video-frame" src="https://player.vimeo.com/video/<?php echo $video_id; ?>?background=1&muted=1&loop=1&byline=0&title=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe class="vimeo-video-frame" src="https://player.vimeo.com/video/<?php echo $video_id; ?>?background=1&muted=1&loop=1&byline=0&title=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe>
 	            <?php } else { ?>
                     <video aria-hidden="true" class="media-content__video video" playsinline autoplay muted loop
                            poster="<?php echo esc_url($data['image']['url']); ?>">
