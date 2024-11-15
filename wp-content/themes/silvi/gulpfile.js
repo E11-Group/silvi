@@ -23,67 +23,76 @@ gulp
 */
 
 // Config for theme
-var themePath = './';
-var projectURL = 'http://silvi.loc/';
+var themePath = "./";
+var projectURL = "http://silvi.loc/";
 
 // Gulp Nodes
-var gulp        = require( 'gulp' ),
-    gulpPlugins = require( 'gulp-load-plugins' )();
 
-// Browserstack
-const browserSync = require('browser-sync').create();
+const { create } = require("browser-sync");
+// Gulp Nodes
+let gulp = require("gulp"),
+  gulpPlugins = require("gulp-load-plugins")();
+
 // Error Handling
+const browserSync = create();
 
-var onError = function( err ) {
-    console.log( 'An error occurred:', err.message );
-    this.emit( 'end' );
-};
-
-
-gulp.task('scss', function () {
-    const { autoprefixer, cleanCss, notify, plumber, sass, sassGlob } = gulpPlugins;
-    // return sass(themePath + 'style.scss', { sourcemap: false })
-    return gulp.src(themePath + 'style.scss')
-        .on('error', sass.logError)
-        .pipe(plumber())
-        .pipe(sassGlob())
-        .pipe(sass())
-        .pipe(autoprefixer('last 4 version'))
-        .pipe(cleanCss())
-        .pipe(gulp.dest(themePath))
-        .pipe( browserSync.stream() ) // Reloads style.min.css if that is enqueued.
-        //.pipe(notify({ message: 'Scss task complete' }));
+gulp.task("scss", function () {
+  const { cleanCss, notify, plumber, sassGlob } = gulpPlugins;
+  const autoprefixer = require("autoprefixer");
+  const sass = require("gulp-sass")(require("sass"));
+  const postcss = require("gulp-postcss");
+  return gulp
+    .src(themePath + "style.scss")
+    .pipe(
+      plumber({
+        errorHandler: function (error) {
+          console.error(error.messageFormatted);
+          this.emit("end");
+        },
+      })
+    )
+    .pipe(sassGlob())
+    .pipe(sass())
+    .pipe(postcss([autoprefixer()]))
+    .pipe(cleanCss())
+    .pipe(gulp.dest(themePath))
+    .pipe(notify({ message: "Scss task complete" }));
 });
 
-gulp.task('scripts', function() {
-    const { concat, notify, plumber, rename, terser } = gulpPlugins;
-    return gulp.src( [themePath + 'js/libs/**/*.js', themePath + 'js/development/**/*.js'] )
-        .pipe(plumber())
-        .pipe(concat('js/scripts.js'))
-        .pipe(gulp.dest(themePath))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(terser())
-        .pipe(gulp.dest(themePath))
-        .pipe(notify({ message: 'Scripts task complete' }));
+gulp.task("scripts", function () {
+  const { concat, notify, plumber, rename, uglify } = gulpPlugins;
+  return gulp
+    .src([themePath + "js/libs/**/*.js", themePath + "js/development/**/*.js"])
+    .pipe(plumber())
+    .pipe(concat("js/scripts.js"))
+    .pipe(gulp.dest(themePath))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(uglify())
+    .pipe(gulp.dest(themePath))
+    .pipe(notify({ message: "Scripts task complete" }));
 });
-
 
 // Watch task -- this runs on every save.
-gulp.task( 'watch', function() {
+gulp.task("watch", function () {
+  browserSync.init({
+    proxy: projectURL,
+    // `true` Automatically open the browser with BrowserSync live server.
+    // `false` Stop the browser from automatically opening.
+    //open: true,
+    injectChanges: true,
+  });
+  // Watch all .scss files
 
-    browserSync.init({
-        proxy: projectURL,
-        injectChanges: true,
-    });
+  gulp
+    .watch(themePath + "**/**/*.scss", gulp.series("scss"))
+    .on("change", browserSync.reload);
+  // Watch js files
+  gulp
+    .watch(themePath + "js/development/**/*.js", gulp.series("scripts"))
+    .on("change", browserSync.reload);
 
-    // Watch all .scss files
-    gulp.watch( themePath + '**/**/*.scss', gulp.series( 'scss' ) );
-    gulp.watch( themePath + '**/**/*.html').on('change',browserSync.reload);
-    gulp.watch( themePath + '**/**/*.php').on('change',browserSync.reload);
-
-    // Watch js files
-    gulp.watch( themePath + 'js/development/**/*.js', gulp.series( 'scripts' ) );
+  gulp.watch(themePath + "**/**/*.php").on("change", browserSync.reload);
 });
 
 // Default task -- runs scss and watch functions
-gulp.task( 'default', gulp.series('scripts', 'scss', 'watch'));
+gulp.task("default", gulp.series("scripts", "scss", "watch"));
