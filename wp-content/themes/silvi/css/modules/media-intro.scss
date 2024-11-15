@@ -205,3 +205,12 @@
   justify-content: center;
   align-content: flex-start;
 }
+
+.media-intro--hide-mobile-video{
+  .media-content__video-container{
+
+    @media #{$phone-portrait} {
+      display: none;
+    }
+  }
+}

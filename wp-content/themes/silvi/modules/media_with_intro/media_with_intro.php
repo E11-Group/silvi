@@ -26,6 +26,7 @@ function e11_media_with_intro($args = array(), $use_page_content = false, $get_f
             'vimeo_video_url'        => $get_field_type($prefix . 'mwi_vimeo_video_url', $field_location),
             'datas'        => $get_field_type($prefix . 'mwi_data_list', $field_location),
             'module_id'     => $get_field_type( $prefix . 'mwi_module_id', $field_location),
+            'disable_video_on_mobile'     => $get_field_type( $prefix . 'mwi_disable_video_on_mobile', $field_location),
         );
     else:
         $defaults = array(
@@ -38,6 +39,7 @@ function e11_media_with_intro($args = array(), $use_page_content = false, $get_f
             'image'     => array(),
             'datas'        => array(),
             'module_id'     => false,
+            'disable_video_on_mobile'     => false,
         );
     endif;
 
