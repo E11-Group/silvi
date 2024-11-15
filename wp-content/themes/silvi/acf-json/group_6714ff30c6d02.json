@@ -276,6 +276,26 @@
             "endpoint": 0
         },
         {
+            "key": "field_673763570358c",
+            "label": "Disable Video On Mobile",
+            "name": "mwi_disable_video_on_mobile",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_6714ff30d46d0",
             "label": "Module ID",
             "name": "mwi_module_id",
@@ -315,5 +335,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731477198
+    "modified": 1731683196
 }

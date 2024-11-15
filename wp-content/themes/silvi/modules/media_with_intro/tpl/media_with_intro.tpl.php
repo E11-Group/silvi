@@ -8,12 +8,15 @@ if (!empty($data['module_id'])) {
 $alignment = $data['alignment'];
 $addClass = '';
 if ($alignment == 'right') {
-    $addClass = 'right-alignment';
+    $addClass .= 'right-alignment';
 }
 
 $hasVideo = '';
 if (!empty($data['background_video']) || !empty($data['vimeo_video_url'])) {
     $hasVideo = 'has-video';
+}
+if($data['disable_video_on_mobile'] == '1') {
+    $addClass .= ' media-intro--hide-mobile-video';
 }
 ?>
 <section class="media-intro <?php echo $addClass; ?>" id="<?php echo esc_attr($block_id); ?>" data-animate>
