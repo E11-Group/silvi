@@ -435,6 +435,36 @@ $(function () {
       $progressBarLabel.text(calc + "% completed");
     }
   );
+
+  //video play on viewport
+  function activateVideoOnViewport() {
+    let windowScrollTop = $(window).scrollTop();
+    let windowHeight = $(window).height();
+    $(".video-frame-container").each(function (i) {
+      let _this = $(this),
+        videoFrame = _this.find(".vimeo-video-frame");
+      if (!videoFrame) return;
+
+      let videoOffsetTop = _this.offset().top,
+        videoOffsetBottom = videoOffsetTop + _this.outerHeight();
+
+      if (
+        videoOffsetTop >= windowScrollTop &&
+        videoOffsetBottom <= windowScrollTop + windowHeight
+      ) {
+        videoFrame[0].contentWindow.postMessage('{"method":"play"}', "*");
+      } else {
+        videoFrame[0].contentWindow.postMessage('{"method":"pause"}', "*");
+      }
+    });
+  }
+  setTimeout(function () {
+    activateVideoOnViewport();
+  }, 1000);
+
+  $(window).on("scroll resize", function () {
+    activateVideoOnViewport();
+  });
 });
 
 // Smooth scrolling when clicking an internal link
@@ -725,7 +755,7 @@ if (wrapper !== null) {
   }
 
   function onScroll(event) {
-    if (!isFeatureEnabledisFeatureEnabled()) return;
+    if (!isFeatureEnabled()) return;
 
     const wrapperEnd = wrapper.offsetTop + wrapper.offsetHeight;
     const windowScrollTop = window.scrollY + window.innerHeight;

@@ -12,11 +12,11 @@ if (!empty($data['module_id'])) {
         </figure>
     <?php endif; ?>
     <?php if(!empty($data['vimeo_video_url']) || !empty($data['background_video']['url'])): ?>
-        <div class="hero-icons__video-container">
+        <div class="hero-icons__video-container video-frame-container">
             <?php if(!empty($data['vimeo_video_url'])) {
 	            $video_id = get_vimeo_id($data['vimeo_video_url']);
                 ?>
-                <iframe class="vimeo-video-frame" src="https://player.vimeo.com/video/<?php echo $video_id; ?>?background=1&autoplay=1&muted=1&loop=1&byline=0&title=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <iframe class="vimeo-video-frame" src="https://player.vimeo.com/video/<?php echo $video_id; ?>?background=1&muted=1&loop=1&byline=0&title=0"  width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             <?php } else { ?>
                 <video aria-hidden="true" class="hero-icons__video video" playsinline autoplay muted loop>
                     <source src="<?php echo esc_url($data['background_video']['url']); ?>" type="video/mp4">
