@@ -167,7 +167,7 @@ wp_reset_postdata(); ?>
 <script>
     var map;
 
-    function initialize() {
+    function initMap() {
         var mapOptions = {
             zoom: <?php echo $map_zoom; ?>,
             center: new google.maps.LatLng(40.13082155313381, -74.82232955794834), // this is for center
@@ -315,7 +315,7 @@ wp_reset_postdata(); ?>
 
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+    //google.maps.event.addDomListener(window, 'load', initMap);
 
     jQuery(document).ready(function ($) {
         $(".js-list-item").click(function () {
