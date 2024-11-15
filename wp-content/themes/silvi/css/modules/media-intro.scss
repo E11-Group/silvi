@@ -207,6 +207,9 @@
 }
 
 .media-intro--hide-mobile-video{
+  @media #{$phone-portrait} {
+   min-height: auto;
+  }
   .media-content__video-container{
 
     @media #{$phone-portrait} {
