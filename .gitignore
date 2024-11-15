@@ -29,6 +29,7 @@ apple-touch-icon-precomposed.png
 apple-touch-icon.png
 favicon.ico
 /wp-content/wflogs/*
+.lando.yml
 local-xdebuginfo.php
 robots.txt
 sitemap_custom.xml
@@ -52,6 +53,10 @@ wp-content/wp-rocket-config
 wp-includes/error_log
 wp-content/ai1wm-backups/
 wp-content/autoptimize_404_handler.php
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6dfcce5ebee119aa7456bdd2cb620717a08d0adf
 
 # wpengine specific
 .wpe-devkit
