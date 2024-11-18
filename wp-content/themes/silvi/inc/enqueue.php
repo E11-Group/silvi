@@ -25,11 +25,14 @@ function e11_scripts() {
 		wp_enqueue_style( 'css', STYLEDIR . '/style.css', false, '1.0.4' );
 
 		// Main Scripts (this file is concatenated from the files inside of js/development/ )
-		wp_enqueue_script( 'scripts', JSDIR . '/scripts.min.js', array( 'jquery' ), '1.0.51', true );
+		wp_enqueue_script( 'scripts', JSDIR . '/scripts.min.js', array( 'jquery' ), '1.0.6', true );
 		wp_localize_script( 'scripts', 'localized', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			'siteurl' => site_url()
 		) );
+
+		// Vimeo Player
+		wp_enqueue_script('vimeo-player-api', 'https://player.vimeo.com/api/player.js', array(), null, true);
 	}
 	wp_dequeue_style( 'wp-block-library' );
 }
