@@ -36,7 +36,14 @@ function e11_theme_setup(){
 	### Theme support stuff
 	add_theme_support( 'menus' ); // Navigation Menus
 	add_theme_support( 'post-thumbnails' ); // Post Thumnbails
-	add_theme_support( 'html5' ); // HTML5 in WP Generated Elemements
+	add_theme_support( 'html5', array(
+		// Any or all of these.
+		'comment-list',
+		'comment-form',
+		'search-form',
+		'gallery',
+		'caption',
+	) ); // HTML5 in WP Generated Elemements
 	add_theme_support( 'title-tag' ); // Support title tags for Yoast SEO Plugin
 
 }

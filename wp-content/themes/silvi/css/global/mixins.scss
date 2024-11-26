@@ -1,6 +1,8 @@
 //FontSize
+@use "sass:math";
+
 @function calculateRem($size) {
-  $remSize: $size / 16px;
+  $remSize: math.div($size, 16px);
   @return $remSize * 1rem;
 }
 
@@ -38,7 +40,7 @@
 }
 
 @mixin letter-spacing($spacing-value, $font-size) {
-  letter-spacing:  $spacing-value / 1000 * $font-size;
+  letter-spacing:  $spacing-value * 0.001 * $font-size;
 }
 
 @mixin absolute-cover {

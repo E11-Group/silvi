@@ -83,3 +83,10 @@ function e11_get_video_details_for_post($post_id)
 
     return $post_id;
 }
+
+//Function to get the vimeo video ID
+function get_vimeo_id($url) {
+	$pattern = '/(?:vimeo\.com\/(?:.*#|.*\/videos\/|video\/|)|^)([0-9]+)/';
+	preg_match($pattern, $url, $matches);
+	return isset($matches[1]) ? $matches[1] : null;
+}

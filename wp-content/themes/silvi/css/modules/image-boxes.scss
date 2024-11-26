@@ -4,6 +4,7 @@
 
 .image-boxes__header {
     padding: 41px 0 51px;
+
     @media #{$phone} {
         padding: 33px 0 30px;
     }
@@ -52,6 +53,18 @@
         padding: 30px 15px;
     }
 
+    &:after {
+        content: "";
+        display: block;
+        opacity: 0.5;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: #111E27;
+    }
+
     &:hover {
         .image-boxes__overlay {
             opacity: 1;
@@ -59,7 +72,7 @@
         }
     }
 
-    & > p {
+    &>p {
         @media #{$phone} {
             display: none;
         }
@@ -199,7 +212,7 @@
 }
 
 .image-boxes__overlay-inner {
-    p{
+    p {
         @include fsz(24px);
         text-transform: none;
         font-weight: 600;

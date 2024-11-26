@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .btn,
 input[type="submit"],
 input[type="button"],
@@ -22,7 +24,7 @@ button[type="submit"] {
   &:hover,
   &:active,
   &:focus {
-      background-color: darken($primary-color, 10%);
+      background-color: color.scale($primary-color, $lightness: -10%);
   }
 }
 
@@ -32,7 +34,7 @@ button[type="submit"] {
   &:hover,
   &:active,
   &:focus {
-      background-color: lighten($alt-color, 10%);
+      background-color: color.scale($alt-color, $lightness: 10%);
   }
 }
 

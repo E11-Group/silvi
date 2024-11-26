@@ -9,9 +9,11 @@
 .ftpquota
 .htaccess
 .idea
+.history
 .sass-cache
 .svn
 .well-known
+.history
 Thumbs.db
 cache
 db.php
@@ -51,8 +53,6 @@ wp-content/wp-rocket-config
 wp-includes/error_log
 wp-content/ai1wm-backups/
 wp-content/autoptimize_404_handler.php
-
-
 # wpengine specific
 .wpe-devkit
 .wpe-pull-ignore
@@ -141,3 +141,7 @@ wp-content/mysql.sql
 *.asf
 *.wmv
 *.avi
+
+# dev
+*.js.map
+*.css.map

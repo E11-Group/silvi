@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .footer {
     background-color: $black;
     color: $white
@@ -64,7 +66,7 @@
                 &:hover,
                 &:active,
                 &:focus {
-                    background-color: darken($primary-color, 10%);
+                    background-color: color.scale($primary-color, $lightness: -10%);
 
                     svg {
                         transform: translate(4px, 3px);
