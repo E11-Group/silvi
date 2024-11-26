@@ -1,0 +1,31 @@
+{
+  "name": "e11-project",
+  "version": "1.0.0",
+  "description": "WordPress project with Webpack for asset management",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --watch --config webpack.config.js",
+    "sync-to-local": "node sync-to-local.js"
+  },
+  "author": "E11 Group",
+  "license": "ISC",
+  "devDependencies": {
+    "@inquirer/prompts": "^6.0.1",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
+    "autoprefixer": "^10.4.20",
+    "chokidar": "^4.0.1",
+    "fs-extra": "^11.2.0",
+    "css-loader": "^7.1.2",
+    "glob": "^11.0.0",
+    "mini-css-extract-plugin": "^2.9.1",
+    "postcss-loader": "^8.1.1",
+    "sass": "^1.77.8",
+    "sass-loader": "^16.0.1",
+    "terser": "^5.31.6",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-concat-files-plugin": "^0.5.2"
+  }
+}

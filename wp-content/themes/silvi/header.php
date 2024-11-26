@@ -214,6 +214,9 @@ endif;
                             if ($choose_mega_menu_styles == 'menu2') {
                                 $addClass = "has-links";
                             }
+                            if ($card_image) {
+                                $addClass = "has-image";
+                            }
                             ?>
                             <div class="megamenu__item <?php echo $parent_menu_id; ?> <?php echo $addClass; ?>">
                                 <div class="megamenu__inner">

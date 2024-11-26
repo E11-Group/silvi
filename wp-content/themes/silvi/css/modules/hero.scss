@@ -224,7 +224,7 @@
 
   .slick-list {
     width: 100%;
-    @media screen and(min-width: 1023px) {
+    @media screen and (min-width: 1023px) {
       overflow: visible;
     }
   }
@@ -263,7 +263,7 @@
     .hero__menu-video {
       opacity: 1;
 
-      @media screen and(min-width: 1023px) {
+      @media screen and (min-width: 1023px) {
         height: 100%;
       }
     }
@@ -275,7 +275,7 @@
     .hero__menu-video {
       opacity: 1;
 
-      @media screen and(min-width: 1023px) {
+      @media screen and (min-width: 1023px) {
         height: calc(100% + 50px);
       }
     }
