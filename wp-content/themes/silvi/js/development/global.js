@@ -425,8 +425,6 @@ $(function () {
     'init beforeChange',
     function (event, slick, currentSlide, nextSlide) {
       var calc = ((nextSlide + 1) / slick.slideCount) * 100;
-      console.log('next slide' + nextSlide);
-      console.log('slidecount' + slick.slideCount);
 
       $progressBar
         .css('background-size', calc + '% 100%')
@@ -453,8 +451,6 @@ $(function () {
         videoOffsetBottom <= windowScrollTop + windowHeight
       ) {
         videoFrame[0].contentWindow.postMessage('{"method":"play"}', '*');
-      } else {
-        videoFrame[0].contentWindow.postMessage('{"method":"pause"}', '*');
       }
     });
   }
@@ -720,19 +716,21 @@ $(document).ready(function () {
 // Select the wrapper and sections within it
 const wrapper = document.querySelector('.has-section-scroll');
 let sections = null;
+
 if (wrapper !== null) {
   sections = wrapper.querySelectorAll('.has-section-scroll > section');
 
   let currentSectionIndex = 0;
   let isScrolling = false;
   let isInWrapper = true;
+
   function isFeatureEnabled() {
     return window.innerWidth >= 561;
   }
 
   function scrollToSection(index) {
     const targetSection = sections[index];
-    const targetPosition = targetSection.offsetTop;
+    const targetPosition = Math.max(0, targetSection.offsetTop - 30);
 
     window.scrollTo({
       top: targetPosition,
@@ -744,8 +742,20 @@ if (wrapper !== null) {
 
   function handleWrapperScroll(event) {
     if (isScrolling || !isFeatureEnabled()) return;
+
+    // Check if the footer is visible
+    const footer = document.querySelector('.footer');
+    if (footer) {
+      const footerRect = footer.getBoundingClientRect();
+      if (footerRect.top < window.innerHeight && footerRect.bottom > 0) {
+        // Footer is visible, so skip snapping
+        return;
+      }
+    }
+
     const direction = event.deltaY > 0 ? 1 : -1;
     const nextIndex = currentSectionIndex + direction;
+
     if (nextIndex >= 0 && nextIndex < sections.length) {
       isScrolling = true;
       scrollToSection(nextIndex);
@@ -757,49 +767,94 @@ if (wrapper !== null) {
     }
   }
 
-  function onScroll(event) {
-    if (!isFeatureEnabled()) return;
+  function handleManualScroll() {
+    if (isScrolling || !isFeatureEnabled()) return;
 
-    const wrapperEnd = wrapper.offsetTop + wrapper.offsetHeight;
-    const windowScrollTop = window.scrollY + window.innerHeight;
-    if (windowScrollTop <= wrapperEnd && !isInWrapper) {
+    // Check if the footer is visible
+    const footer = document.querySelector('.footer');
+    if (footer) {
+      const footerRect = footer.getBoundingClientRect();
+      if (footerRect.top < window.innerHeight && footerRect.bottom > 0) {
+        // Footer is visible, so skip snapping
+        return;
+      }
+    }
+
+    const wrapperStart = wrapper.offsetTop;
+    const wrapperEnd = wrapperStart + wrapper.offsetHeight;
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+    // Check if within the wrapper bounds
+    if (scrollPosition >= wrapperStart && scrollPosition <= wrapperEnd) {
       isInWrapper = true;
-      currentSectionIndex = Math.floor(
-        (window.scrollY - wrapper.offsetTop) / window.innerHeight
+
+      // Calculate the closest section
+      const closestSectionIndex = Array.from(sections).reduce(
+        (closestIndex, section, index) => {
+          const sectionMid = section.offsetTop + section.offsetHeight / 2;
+          const distanceToMid = Math.abs(scrollPosition - sectionMid);
+
+          return distanceToMid <
+            Math.abs(
+              scrollPosition -
+                (sections[closestIndex]?.offsetTop +
+                  sections[closestIndex]?.offsetHeight / 2)
+            )
+            ? index
+            : closestIndex;
+        },
+        currentSectionIndex
       );
-      handleWrapperScroll(event);
-    } else if (isInWrapper) {
-      event.preventDefault();
-      handleWrapperScroll(event);
+
+      isScrolling = true;
+      scrollToSection(closestSectionIndex);
+      setTimeout(() => {
+        isScrolling = false;
+      }, 1500);
     }
   }
+
+  // Attach events
   window.addEventListener(
     'wheel',
     (event) => {
       if (isFeatureEnabled()) {
-        onScroll(event);
+        handleWrapperScroll(event);
       }
     },
     { passive: false }
   );
+
   let startY;
   window.addEventListener('touchstart', (e) => {
     if (!isFeatureEnabled()) return;
     startY = e.touches[0].clientY;
   });
+
   window.addEventListener('touchmove', (e) => {
     if (!isFeatureEnabled()) return;
 
     const wrapperEnd = wrapper.offsetTop + wrapper.offsetHeight;
     const windowScrollTop = window.scrollY + window.innerHeight;
+
     if (windowScrollTop <= wrapperEnd && isInWrapper) {
       e.preventDefault();
       if (isScrolling) return;
+
       const deltaY = startY - e.touches[0].clientY;
       if (Math.abs(deltaY) > 50) {
         handleWrapperScroll({ deltaY });
         startY = e.touches[0].clientY;
       }
     }
+  });
+
+  // Add scroll event for scrollbar dragging
+  let debounceTimeout;
+  window.addEventListener('scroll', () => {
+    if (!isFeatureEnabled() || isScrolling) return;
+
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(handleManualScroll, 200);
   });
 }

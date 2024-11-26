@@ -22,12 +22,6 @@ if($data['disable_video_on_mobile'] == '1') {
 ?>
 <section class="media-intro <?php echo $addClass; ?>" id="<?php echo esc_attr($block_id); ?>" data-animate>
     <div class="media-intro__inner">
-        <?php if (!empty($data['image'])): ?>
-            <figure class="media-intro__bg-image <?php echo $hasVideo; ?>">
-                <img src="<?php echo esc_url($data['image']['url']); ?>"
-                    alt="<?php echo esc_attr($data['image']['alt']); ?>">
-            </figure>
-        <?php endif; ?>
         <?php if (!empty($data['background_video']) || !empty($data['vimeo_video_url'])): ?>
             <div class="media-content__video-container video-frame-container">
 	            <?php if(!empty($data['vimeo_video_url'])) {
@@ -42,7 +36,7 @@ if($data['disable_video_on_mobile'] == '1') {
                             allow="autoplay; fullscreen"
                             allowfullscreen
                             <?php if (!empty($data['image']['url'])): ?>
-                                style="background-image: url('<?php echo esc_url($data['image']['url']); ?>');"
+                                style="background-image: url('<?php echo esc_url($data['image']['url']); ?>'); background-repeat: no-repeat; background-size: cover; background-position: center;"
                             <?php endif; ?>
                         ></iframe>
 	            <?php } else { ?>
