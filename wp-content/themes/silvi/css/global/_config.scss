@@ -1,4 +1,6 @@
 // Sizes
+@use "sass:math";
+
 $base-font-size: 16px;
 $ratio: 1.414;
 $container: 1380px;
@@ -66,7 +68,7 @@ $github: #703083;
 
 // Functions
 @function trem( $px_value ) {
-  @return ( $px_value / $base-font-size ) + rem;
+  @return  math.div($px_value, $base-font-size)  + rem;
 }
 
 // Mixins
