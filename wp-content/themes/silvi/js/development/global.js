@@ -743,27 +743,32 @@ if (wrapper !== null) {
   function handleWrapperScroll(event) {
     if (isScrolling || !isFeatureEnabled()) return;
 
-    // Check if the footer is visible
-    const footer = document.querySelector('.footer');
-    if (footer) {
-      const footerRect = footer.getBoundingClientRect();
-      if (footerRect.top < window.innerHeight && footerRect.bottom > 0) {
-        // Footer is visible, so skip snapping
-        return;
-      }
-    }
+    const delta = event.deltaY;
+    const direction = delta > 0 ? 1 : -1;
 
-    const direction = event.deltaY > 0 ? 1 : -1;
-    const nextIndex = currentSectionIndex + direction;
+    // Calculate the next section index
+    let nextSectionIndex = currentSectionIndex + direction;
+    nextSectionIndex = Math.max(
+      0,
+      Math.min(sections.length - 1, nextSectionIndex)
+    );
 
-    if (nextIndex >= 0 && nextIndex < sections.length) {
+    if (nextSectionIndex !== currentSectionIndex) {
       isScrolling = true;
-      scrollToSection(nextIndex);
+      const targetPosition = sections[nextSectionIndex].offsetTop - 30;
+      scrollToSection(nextSectionIndex);
+
       setTimeout(() => {
         isScrolling = false;
+        // Sanity check to correct the scroll position if necessary
+        const currentScrollPosition = window.scrollY;
+        if (Math.abs(currentScrollPosition - targetPosition) > 10) {
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth',
+          });
+        }
       }, 1500);
-    } else {
-      isInWrapper = false;
     }
   }
 
