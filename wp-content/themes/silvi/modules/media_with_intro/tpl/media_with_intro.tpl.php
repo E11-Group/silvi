@@ -24,8 +24,7 @@ if($data['disable_video_on_mobile'] == '1') {
     <div class="media-intro__inner">
             <?php if (!empty($data['image']) && (empty($data['background_video']) && empty($data['vimeo_video_url']))): ?>
             <figure class="media-intro__bg-image <?php echo $hasVideo; ?>">
-                <img src="<?php echo esc_url($data['image']['url']); ?>"
-                    alt="<?php echo esc_attr($data['image']['alt']); ?>">
+                <?php echo wp_get_attachment_image($data['image']['id'], 'full', false, array('class' => 'media-intro__bg-image ' . $hasVideo)); ?>
             </figure>
             <?php endif; ?>
         <?php if (!empty($data['background_video']) || !empty($data['vimeo_video_url'])): ?>
