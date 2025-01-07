@@ -56,7 +56,7 @@ if ( ! empty( $data['location_item'] ) ) {
 
 
 ?>
-<section class="media-content media-intro media-content--locations" id="<?php echo esc_attr( $block_id ); ?>" data-animate>
+<section class="media-content media-intro media-content--locations scroll-section" id="<?php echo esc_attr( $block_id ); ?>" data-animate>
     <div id="map"></div>
     <!--  <figure class="media-content__bg-image <?php /*echo $addClass; */ ?>">
 			<img src="<?php /*echo esc_url($data['image']['url']); */ ?>" alt="<?php /*echo esc_attr($data['image']['alt']); */ ?>">

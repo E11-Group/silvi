@@ -5,7 +5,7 @@ if (!empty($data['module_id'])) {
     $block_id = 'block-' . uniqid();
 }
 ?>
-<section class="hero-icons " id="<?php echo esc_attr($block_id); ?>" data-animate>
+<section class="hero-icons scroll-section " id="<?php echo esc_attr($block_id); ?>" data-animate>
     <?php if (!empty($data['image'])): ?>
         <figure class="hero-icons__bg-image">
             <img src="<?php echo esc_url($data['image']['url']); ?>" alt="<?php echo esc_attr($data['image']['alt']); ?>">
