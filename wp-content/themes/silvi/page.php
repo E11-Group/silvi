@@ -25,6 +25,12 @@ if(!empty($enable_section_scroll)){
     <?php } ?>
     <?php if (!post_password_required(get_the_ID()) && !post_password_required($parent)) { ?>
     <?php include('modules/flex-content/flex-content.php') ?>
+    <?php if(!empty($enable_section_scroll)){
+        get_footer();
+    } ?>
     <?php } ?>
 </main>
-<?php get_footer(); ?>
+<?php if(empty($enable_section_scroll)){
+    get_footer();
+} 
+?>

@@ -1,4 +1,13 @@
-<footer class="footer">
+<?php
+$enable_section_scroll = get_field('enable_section_scroll');
+
+$footerClass = 'footer';
+if(!empty($enable_section_scroll)){
+    $footerClass = 'footer scroll-section fp-auto-height';
+}
+?>
+
+<footer class="<?php echo $footerClass; ?>">
 <?php
         $phone = get_field('phone_number', 'options');
         $linkedin = get_field('linkedin_url', 'options');
