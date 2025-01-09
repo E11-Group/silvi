@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
       credits: false,
       licenseKey: 'SJND8-4EIV8-KZP5H-1QJ98-YLGJL',
       normalScrollElements: '.footer',
+      scrollingSpeed: 1000,
       sectionSelector: '.scroll-section', // Any "slide" will need to have this class
       onLeave: function (origin, destination, direction) {
         // Add header--fixed class once we leave the top
