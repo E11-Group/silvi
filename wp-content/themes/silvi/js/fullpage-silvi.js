@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
   const fullpageContainer = document.querySelector('.has-section-scroll');
   if (fullpageContainer) {
+    console.log('Initializing full page scroll');
+    let count = 0;
     const header = document.querySelector('.js-header');
+    const sections = document.querySelectorAll('.scroll-section');
+    const anchors = Array.from(sections).map(
+      (section) => section.getAttribute('data-id') ?? 'block-' + count++
+    );
 
     new fullpage('.has-section-scroll', {
       credits: false,
@@ -9,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
       normalScrollElements: '.footer',
       scrollingSpeed: 1000,
       sectionSelector: '.scroll-section', // Any "slide" will need to have this class
+      anchors: anchors,
       onLeave: function (origin, destination, direction) {
         // Add header--fixed class once we leave the top
         if (destination.index > 0) {

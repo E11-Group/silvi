@@ -7,7 +7,7 @@ if(!empty($enable_section_scroll)){
 }
 ?>
 
-<footer class="<?php echo $footerClass; ?>">
+<footer class="<?php echo $footerClass; ?>" data-id="footer">
 <?php
         $phone = get_field('phone_number', 'options');
         $linkedin = get_field('linkedin_url', 'options');

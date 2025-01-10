@@ -11,7 +11,7 @@ if (!empty($data['background_video']) || !empty($data['vimeo_video_url'])) {
 }
 
 ?>
-<section class="media-content scroll-section" id="<?php echo esc_attr($block_id); ?>" data-animate>
+<section class="media-content scroll-section" data-id="<?php echo esc_attr($block_id); ?>" data-animate>
     <?php if (!empty($data['image'])): ?>
         <figure class="media-content__bg-image <?php echo $addClass; ?>">
             <img src="<?php echo esc_url($data['image']['url']); ?>" alt="<?php echo esc_attr($data['image']['alt']); ?>">
