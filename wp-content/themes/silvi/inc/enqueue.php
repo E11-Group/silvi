@@ -34,7 +34,7 @@ function e11_scripts() {
 
 		// Fullpage.js
 		wp_enqueue_script( 'fullpage-js', JSDIR . '/fullpage.min.js', ['jquery'], '4.0.31', true );
-		wp_enqueue_script( 'fullpage-silvi', JSDIR . '/fullpage-silvi.js', ['jquery', 'fullpage-js'], '1.0.1', true);
+		wp_enqueue_script( 'fullpage-silvi', JSDIR . '/fullpage-silvi.js', ['jquery', 'fullpage-js'], '1.0.2', true);
 
 		// Vimeo Player
 		wp_enqueue_script('vimeo-player-api', 'https://player.vimeo.com/api/player.js', array(), null, true);

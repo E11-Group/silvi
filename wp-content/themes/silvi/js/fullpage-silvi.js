@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
       (section) => section.getAttribute('data-id') ?? 'block-' + count++
     );
 
+    let isScrolling = false;
+
     new fullpage('.has-section-scroll', {
       credits: false,
       licenseKey: 'SJND8-4EIV8-KZP5H-1QJ98-YLGJL',
@@ -17,6 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
       sectionSelector: '.scroll-section', // Any "slide" will need to have this class
       anchors: anchors,
       onLeave: function (origin, destination, direction) {
+        if (isScrolling) return false; // Ignore scroll events if already scrolling
+
+        isScrolling = true;
+        setTimeout(() => {
+          isScrolling = false;
+        }, 1500); // Ignore scroll events for a small time to avoid double-scroll
+
         // Add header--fixed class once we leave the top
         if (destination.index > 0) {
           header.classList.add('header--fixed');
