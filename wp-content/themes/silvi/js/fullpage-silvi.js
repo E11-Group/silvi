@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       scrollingSpeed: 1000,
       sectionSelector: '.scroll-section', // Any "slide" will need to have this class
       anchors: anchors,
+      scrollBar: true,
       onLeave: function (origin, destination, direction) {
         if (isScrolling) return false; // Ignore scroll events if already scrolling
 
