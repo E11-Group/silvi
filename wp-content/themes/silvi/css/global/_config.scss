@@ -1,4 +1,6 @@
 // Sizes
+@use "sass:math";
+
 $base-font-size: 16px;
 $ratio: 1.414;
 $container: 1380px;
@@ -7,6 +9,7 @@ $site-width: 1380px;
 // Colors
 $black: #111E27;
 $black-alt: #000000;
+$black-100 : #1E1E1E;
 $gray: #D8D8D8;
 $white: #FFFFFF;
 $primary-color: #FFC815;
@@ -19,6 +22,7 @@ $alt-family: 'Teko', sans-serif;
 // Media Queries
 $retina-width: 1600px;
 $laptop-width: 1439px;
+$nav-width: 1300px;
 $small-width: 1200px;
 $tablet-width: 1024px;
 $phone-width: 767px;
@@ -29,6 +33,7 @@ $header-width: 960px;
 $desktop: 'screen and (max-width: #{$container})';
 $retina-screen: 'screen and (max-width: #{$retina-width})';
 $laptop-screen: 'screen and (max-width: #{$laptop-width})';
+$nav-screen: 'screen and (max-width: #{$nav-width})';
 $small-screen: 'screen and (max-width: #{$small-width})';
 $tablet: 'screen and (max-width: #{$tablet-width})';
 $phone: 'screen and (max-width: #{$phone-width})';
@@ -63,7 +68,7 @@ $github: #703083;
 
 // Functions
 @function trem( $px_value ) {
-  @return ( $px_value / $base-font-size ) + rem;
+  @return  math.div($px_value, $base-font-size)  + rem;
 }
 
 // Mixins
