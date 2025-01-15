@@ -1,6 +1,14 @@
 .has-section-scroll > section {
   height: 100%;
   overflow: hidden;
+
+  @media #{$phone-portrait} {
+    &.hero-icons {
+      align-items: center;
+      display: flex;
+      height: 100vh;
+    }
+  }
 }
 
 .has-section-scroll {
