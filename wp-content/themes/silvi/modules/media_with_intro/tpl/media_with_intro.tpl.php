@@ -22,7 +22,7 @@ if($data['disable_video_on_mobile'] == '1') {
 ?>
 <section class="media-intro scroll-section <?php echo $addClass; ?>" data-id="<?php echo esc_attr($block_id); ?>" data-animate>
     <div class="media-intro__inner">
-            <?php if (!empty($data['image']) && (empty($data['background_video']) && empty($data['vimeo_video_url']))): ?>
+            <?php if (!empty($data['image']) && (empty($data['background_video']))): ?>
             <figure class="media-intro__bg-image <?php echo $hasVideo; ?>">
                 <?php echo wp_get_attachment_image($data['image']['id'], 'full', false, array('class' => 'media-intro__bg-image ' . $hasVideo)); ?>
             </figure>

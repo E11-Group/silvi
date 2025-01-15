@@ -10,15 +10,19 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     let isScrolling = false;
+    const isMobile = window.innerWidth <= 768;
 
     new fullpage('.has-section-scroll', {
       credits: false,
       licenseKey: 'SJND8-4EIV8-KZP5H-1QJ98-YLGJL',
-      normalScrollElements: '.footer',
+      // normalScrollElements: '.footer',
       scrollingSpeed: 1000,
       sectionSelector: '.scroll-section', // Any "slide" will need to have this class
       anchors: anchors,
-      scrollBar: true,
+      css3: true,
+      responsiveHeight: 330,
+      scrollOverflow: false,
+      scrollBar: !isMobile,
       onLeave: function (origin, destination, direction) {
         if (isScrolling) return false; // Ignore scroll events if already scrolling
 
